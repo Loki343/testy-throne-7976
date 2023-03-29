@@ -1,0 +1,39 @@
+.Navbar-Container {
+  display: flex;
+  border: 1px solid black;
+  margin: auto;
+  width: 96%;
+}
+.Navbar-Container > div:nth-child(1) {
+  border: 1px solid black;
+  height: fit-content;
+  width: 20%;
+}
+
+.Navbar-Container > div:nth-child(2) {
+  border: 1px solid black;
+  height: 300;
+  width: 100%;
+}
+.Side-bar-BTN {
+  font-weight: bolder;
+  font-size: large;
+  margin: 10px;
+  border: 0px;
+  height: 30px;
+  background-color: teal;
+  width: 150px;
+}
+.Side-bar-BTN:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(216, 25, 25);
+  font-weight: bolder;
+}
+/* SEARCH BER STYLE */
+
+.Search-BTN {
+  font-weight: bold;
+  font-size: xx-large;
+  height: 30px;
+  width: 190px;
+}
