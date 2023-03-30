@@ -37,3 +37,42 @@
   height: 30px;
   width: 190px;
 }
+
+
+/* DESHBORD */
+
+
+.Daily-Record-Track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto, auto);
+  gap: 10px;
+  width: 76%;
+  margin: auto;
+  margin-top: 10px;
+}
+.Daily-Record-Track > div {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+/* OVERVIEW SECTION */
+
+.OVERVIEW-IMG {
+  display: flex;
+  justify-content: space-evenly;
+  width: 76%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.OVERVIEW-IMG > div:nth-child(1) {
+  width: 30%;
+}
+
+.OVERVIEW-IMG > div:nth-child(2) {
+  width: 70%;
+}
