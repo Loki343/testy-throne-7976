@@ -9,7 +9,7 @@ import {
     Image,
   } from '@chakra-ui/react';
   
-  export const MenProduct=({image ,title , id, discount ,label,price , price_c})=> {
+  export const WomenProduct=({image ,title , id, discount ,label,price , price_c})=> {
     return (
       <Center >
         <Box

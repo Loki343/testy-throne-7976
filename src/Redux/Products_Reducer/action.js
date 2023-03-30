@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_MEN_PRODUCTS_SUCCESS, PRODUCTS_FAILURE, PRODUCTS_REQUEST } from "./actionTypes";
+import { GET_MEN_PRODUCTS_SUCCESS, GET_WOMEN_PRODUCTS_SUCCESS, PRODUCTS_FAILURE, PRODUCTS_REQUEST } from "./actionTypes";
 
 export const getMenProducts=()=>(dispatch)=>{
   dispatch({type:PRODUCTS_REQUEST});
@@ -12,6 +12,12 @@ export const getMenProducts=()=>(dispatch)=>{
 
 };
 
-export const getWoMenProducts=()=>{
-
+export const getWoMenProducts=()=>(dispatch)=>{
+  dispatch({type:PRODUCTS_REQUEST});
+  axios.get("http://localhost:8080/women")
+  .then((res)=>{
+    dispatch({type:GET_WOMEN_PRODUCTS_SUCCESS , payload:res.data})
+  }).catch(()=>{
+    dispatch({type:PRODUCTS_FAILURE});
+  })
 };
