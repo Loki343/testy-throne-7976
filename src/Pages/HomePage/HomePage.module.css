@@ -1,26 +1,62 @@
-.imageContain{
-    margin-top: 20px;
-    display: flex;
-    gap: 5px;
+.imageContain {
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
 }
 
-.imageContain>div>p{
-    text-align: center;
-    font-weight: 600;
+.imageContain > div > p {
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.categoryHeading {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.heritage {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+@media screen and (min-width: 10px) {
+  .heritage {
+    font-size: 15px;
+  }
+  .categoryHeading {
+    font-size: 15px;
+  }
+  .imageContain > div > p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 475px) {
+  .heritage {
+    font-size: 20px;
+  }
+  .categoryHeading {
+    font-size: 20px;
+  }
+  .imageContain > div > p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .heritage {
+    font-size: 40px;
+  }
+  .categoryHeading {
+    font-size: 40px;
+  }
+  .imageContain > div > p {
     font-size: 25px;
-    padding: 10px;
-}
-
-.categoryHeading{
-    margin-top: 30px;
-    text-align: center;
-    font-size: 40px;
-    font-weight: bolder;
-}
-
-.heritage{
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    padding: 15px;
+  }
 }

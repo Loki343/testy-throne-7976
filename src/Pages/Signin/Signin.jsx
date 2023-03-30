@@ -15,7 +15,7 @@ import { useToast } from "@chakra-ui/react";
 function Signin() {
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
- 
+
   const navigate = useNavigate();
   const toast = useToast();
 
@@ -26,7 +26,7 @@ function Signin() {
       title: "Wrong Email or Password.",
       description: "Please enter right email or password!!!",
       status: "error",
-      duration: 9000,
+      duration: 3000,
       isClosable: true,
       position: "top",
     });
@@ -37,52 +37,41 @@ function Signin() {
       title: "Login Successful.",
       description: "Thank You For Login!!!",
       status: "success",
-      duration: 9000,
+      duration: 3000,
       isClosable: true,
       position: "top",
     });
   };
   // all toasts are here
 
-  // const submitLogin = async () => {
-  //   // setload(true);
-  //   // console.log(load);
-  //   try {
-  //     let res = await fetch(
-  //       `https://mockserver-rny6.onrender.com/usersData`
-  //     );
-  //     let data = await res.json();
-  //     // console.log(data);
-  //     let Auth = false;
-  //     for (let i in data) {
-  //       if (data[i].email === email && data[i].password === password) {
-  //         Auth = true;
-  //         localStorage.setItem("auth", true);
-  //         localStorage.setItem("name", data[i].name);
-  //         // loginUser(data[i].name);
-  //         // console.log(data[i].name);
-  //         break;
-  //       }
-  //     }
-  //     // setload(false);
-  //     if (Auth === false) {
-  //       // alert("Please enter right email or password!");
-  //       wrongEmail();
-  //     } else {
-  //       // alert("Login Successfull!");
-  //       loginSuccess();
-  //       navigate("/");
-  //     }
+  const submitLogin = async () => {
+    try {
+      let res = await fetch(`http://localhost:8080/user`);
+      let data = await res.json();
+      // console.log(data);
+      let Auth = false;
+      for (let i in data) {
+        if (data[i].email === email && data[i].password === password) {
+          Auth = true;
+          localStorage.setItem("name", data[i].name);
+          break;
+        }
+      }
 
-  //     console.log(Auth);
-  //   } catch (error) {
-  //     setload(false);
-  //     console.log(error);
-  //   }
-  //   setemail("");
-  //   setPassword("");
-  //   window.location.reload();
-  // };
+      if (Auth === false) {
+        wrongEmail();
+      } else {
+        loginSuccess();
+        navigate("/");
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+    setemail("");
+    setPassword("");
+    window.location.reload();
+  };
 
   return (
     <div>
@@ -127,7 +116,7 @@ function Signin() {
             marginTop="30px"
             color="white"
             background="black"
-            
+            onClick={submitLogin}
             _hover={{
               bg: "rgb(4,4,4)",
             }}

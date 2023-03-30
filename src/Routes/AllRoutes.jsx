@@ -5,6 +5,10 @@ import { MenProductPage } from "../Pages/MenProductPage";
 import Signin from "../Pages/Signin/Signin";
 import Signup from "../Pages/Signup/Signup";
 import WomenProductPage from "../Pages/WomenProductPage";
+import SingleProductPage from "../Pages/Product_to_Payment/SingleProductPage";
+import CartPage from "../Pages/Product_to_Payment/CartPage";
+import Error from "../Components/Products/Error";
+
 
 
 const AllRoutes = () => {
@@ -14,7 +18,12 @@ const AllRoutes = () => {
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/men-product" element={<MenProductPage />} />
+      <Route path="/men-product:id" element={<SingleProductPage />} />
+      <Route path="/women-product:id" element={<SingleProductPage />} />
       <Route path="/women-product" element={<WomenProductPage />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="*" element={<Error />} />
+
     </Routes>
   );
 };
