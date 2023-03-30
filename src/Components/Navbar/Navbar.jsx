@@ -28,6 +28,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import styles from "./Navbar.module.css";
 import Navbar2 from "./Navbar2";
+import ButtonLogout from "./ButtonLogout";
+import { useToast } from "@chakra-ui/react";
 
 const NAV_ITEMS = [
   {
@@ -110,13 +112,25 @@ const NAV_ITEMS = [
     href: "/store?filter=Tv+%26+Home",
   },
   {
-    label: "OUR_STORIES",
+    label: "STORY",
     href: "/store?filter=Entertainment",
-  }
+  },
 ];
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const toast = useToast();
+
+  const logoutSuccess = () => {
+    toast({
+      title: "Logout Successful.",
+      description: "You are Logged out now",
+      status: "error",
+      duration: 9000,
+      isClosable: true,
+      position: "top",
+    });
+  };
 
   return (
     <>
@@ -156,15 +170,7 @@ export default function Navbar() {
               color={useColorModeValue("gray.800", "white")}
             >
               <Link to={"/"}>
-                <Flex
-                  style={{
-                    fontWeight: "600",
-                    fontSize: "45px",
-                    fontFamily: "cursive",
-                  }}
-                >
-                  UNICORN
-                </Flex>
+                <Flex className={styles.logoname}>UNICORN</Flex>
               </Link>
             </Text>
 
@@ -179,7 +185,7 @@ export default function Navbar() {
             direction={"row"}
             spacing={6}
           >
-            {false ? (
+            {localStorage.getItem("name") ? (
               <>
                 <Button
                   as={"a"}
@@ -187,28 +193,37 @@ export default function Navbar() {
                   fontWeight={400}
                   variant={"link"}
                   href={"/cart"}
-                  color={"white"}
+                  color={"black"}
                 >
                   <BsFillBagCheckFill />
                   <Tooltip
-                    // label={`You have ${cart.length || 0} items in the cart`}
+                    label={`You have 0 items in the cart`}
                     fontSize="md"
                     background="lightgrey"
                     color={"black"}
                   >
                     <span style={{ marginLeft: "4px" }}>
-                      {/* Cart : {cart.length || 0} */}
+                      Cart :  0
                     </span>
                   </Tooltip>
                 </Button>
 
                 <Button className={styles.name}>
-                  {localStorage.getItem("name")}
-                  <span style={{ marginLeft: "5px" }}>
+                  <span>{localStorage.getItem("name")}</span>
+                  <span style={{ marginLeft: "2px" }}>
                     <FaUserCircle />{" "}
                   </span>
                 </Button>
-                <>{/* <ButtonLogout logout={logoutUser} /> */}</>
+                <>
+                  <ButtonLogout
+                  style={{marginRight:'10px'}}
+                    logout={() => {
+                      logoutSuccess();
+                      localStorage.clear();
+                      window.location.reload();
+                    }}
+                  />
+                </>
               </>
             ) : (
               <>
@@ -299,7 +314,7 @@ const DesktopNav = () => {
         </Box>
       ))}
       <Input
-      border={'1px solid'}
+        border={"1px solid"}
         padding={"5px"}
         fontSize={"16px"}
         height={"25px"}
