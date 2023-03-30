@@ -1,4 +1,5 @@
-import { GET_MEN_PRODUCTS_SUCCESS, PRODUCTS_FAILURE, PRODUCTS_REQUEST,GET_SINGLE_PRODUCT_SUCCESS } from "./actionTypes";
+
+import { GET_MEN_PRODUCTS_SUCCESS,GET_WOMEN_PRODUCTS_SUCCESS, PRODUCTS_FAILURE, PRODUCTS_REQUEST,GET_SINGLE_PRODUCT_SUCCESS } from "./actionTypes";
 
 export const initialState = {
     isLoading: false,
@@ -12,7 +13,9 @@ export const reducer = (state = initialState, { type, payload }) => {
         case PRODUCTS_REQUEST:
             return { ...state, isLoading: true };
         case GET_MEN_PRODUCTS_SUCCESS:
-            return { ...state, isLoading: false, products: payload }
+            return {...state , isLoading:false , products:payload};
+        case GET_WOMEN_PRODUCTS_SUCCESS:
+            return {...state , isLoading:false , products:payload};       
         case PRODUCTS_FAILURE:
             return { ...state, isLoading: false, isError: true };
 
