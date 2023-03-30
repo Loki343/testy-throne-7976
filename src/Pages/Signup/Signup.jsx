@@ -12,27 +12,26 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { addUserData } from "./../../Redux/AuthReducer/action";
+
+const initialState = {
+  name: "",
+  email: "",
+  password: "",
+  mobile: "",
+  gender: "",
+  profile:
+    "https://loopinfosol.in/themeforest/ekka-html-v33/ekka-admin/assets/img/vendor/u1.jpg",
+};
 
 function Signup() {
-  const [password, setPassword] = useState("");
-  const [name, setname] = useState("");
-  const [email, setemail] = useState("");
-  const [load, setload] = useState(false);
-  const [mobile, setMobile] = useState("");
-  const [gender, setGender] = useState("");
+  const [userData, setUserData] = useState(initialState);
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const toast = useToast();
-  // all toasts are here
-  const emailExist = () => {
-    toast({
-      title: "Email Already Exist.",
-      description: "Please Enter New Email.",
-      status: "error",
-      duration: 9000,
-      isClosable: true,
-      position: "top",
-    });
-  };
+
   const signupSuccess = () => {
     toast({
       title: "Signup Successful.",
@@ -43,19 +42,47 @@ function Signup() {
       position: "top",
     });
   };
-  // all toasts are here
-  const postdata = async () => {
-    setload(true);
-    // for verify same email
+
+  const emailExist = () => {
+    toast({
+      title: "Email Already Exist.",
+      description: "Please Enter New Email.",
+      status: "error",
+      duration: 9000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
+  const fillRequiredData = () => {
+    toast({
+      title: "Please fill required data",
+      description: "Please Share required info",
+      status: "error",
+      duration: 9000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData((prev) => {
+      return { ...prev, [name]: value };
+    });
+  };
+
+  const postdata = async (e) => {
+    e.preventDefault();
+    setUserData(initialState);
+    // const payload = {...userData,price: Number(userData.price)}
     try {
-      let res = await fetch(
-        `http://localhost:8080/user`
-      );
+      let res = await fetch("http://localhost:8080/user");
       let data = await res.json();
       console.log(data);
       var mailAuth = false;
       for (let i in data) {
-        if (data[i].email === email) {
+        if (data[i].email === userData.email) {
           mailAuth = true;
           break;
         }
@@ -63,51 +90,23 @@ function Signup() {
 
       if (mailAuth === true) {
         emailExist();
-        setload(false);
-      } else {
-        signupSuccess();
-        navigate("/signin");
+        return;
       }
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
 
-    console.log("mailAuth", mailAuth);
-    // for normal signup
-    if (!mailAuth) {
-      try {
-        let res = await fetch(
-          `http://localhost:8080/user`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              name,
-              email,
-              password,
-              mobile,
-              gender,
-              profile:
-                "https://loopinfosol.in/themeforest/ekka-html-v33/ekka-admin/assets/img/vendor/u1.jpg",
-            }),
-          }
-        );
-        let data = await res.json();
-        console.log(data);
-        setload(false);
-        // alert("Signup Successfull!");
-        // signupSuccess();
-        // navigate("/signin");
-      } catch (error) {
-        setload(false);
-        console.log(error);
-      }
-
-      setname("");
-      setemail("");
-      setPassword("");
+    if (
+      !mailAuth &&
+      userData.name &&
+      userData.email &&
+      userData.password &&
+      userData.gender &&
+      userData.mobile
+    ) {
+      dispatch(addUserData(userData, signupSuccess, navigate, emailExist));
+    }else{
+      fillRequiredData()
     }
   };
 
@@ -120,43 +119,55 @@ function Signup() {
         <FormControl>
           <FormLabel>Name</FormLabel>
           <Input
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setname(e.target.value)}
+            placeholder="Your user Name (6 characters only & Required*)"
+            value={userData.name}
+            maxLength={6}
+            onChange={(e) => handleChange(e)}
+            name="name"
             type="text"
           />
           <FormLabel>Gender</FormLabel>
           <Select
-            placeholder="Select Your Gender"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
+            placeholder="Select Your Gender (*Required)"
+            value={userData.gender}
+            onChange={(e) => handleChange(e)}
+            name="gender"
           >
             <option value="Male">Male</option>
             <option value="female">Female</option>
           </Select>
           <FormLabel>Phone Number</FormLabel>
           <Input
-            placeholder="Your Phone Number"
+            placeholder="Your Phone Number (*Required)"
             type="number"
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
+            value={userData.mobile}
+            onChange={(e) => handleChange(e)}
+            name="mobile"
           />
           <FormLabel>Email address</FormLabel>
           <Input
-            value={email}
-            onChange={(e) => setemail(e.target.value)}
+            value={userData.email}
+            onChange={(e) => handleChange(e)}
             type="email"
-            placeholder="Your Email Address"
+            placeholder="Your Email Address (*Required)"
+            name="email"
           />
           <FormLabel>Password</FormLabel>
           <Input
-            placeholder="Your Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Your Password (*Required)"
+            value={userData.password}
+            onChange={(e) => handleChange(e)}
             type="password"
+            name="password"
           />
           <FormLabel>Re-Enter Password</FormLabel>
-          <Input placeholder="Re-Enter Your Password" type="password" />
+          <Input
+            placeholder="Re-Enter Your Password (*Required)"
+            type="password"
+            onChange={(e) => handleChange(e)}
+            name="password"
+            value={userData.password}
+          />
           <FormHelperText>
             We'll never share your Email & Password.
           </FormHelperText>
@@ -166,7 +177,7 @@ function Signup() {
               Sign in
             </Link>
           </FormHelperText>
-          {load ? (
+          {/* {load ? (
             <Button
               isLoading
               w="10%"
@@ -179,22 +190,22 @@ function Signup() {
             >
               Email
             </Button>
-          ) : (
-            <Button
-              onClick={postdata}
-              loadingText="Submitting"
-              w="20%"
-              marginLeft="42%"
-              marginTop="30px"
-              color="white"
-              background="black"
-              _hover={{
-                bg: "rgb(4,4,4)",
-              }}
-            >
-              <span className={styles.signupButton}>Sign up</span>
-            </Button>
-          )}
+          ) : ( */}
+          <Button
+            onClick={postdata}
+            loadingText="Submitting"
+            w="20%"
+            marginLeft="42%"
+            marginTop="30px"
+            color="white"
+            background="black"
+            _hover={{
+              bg: "gray",
+            }}
+          >
+            <span className={styles.signupButton}>Sign up</span>
+          </Button>
+          {/* )} */}
         </FormControl>
       </div>
     </div>
