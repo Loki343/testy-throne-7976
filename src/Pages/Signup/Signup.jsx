@@ -77,7 +77,7 @@ function Signup() {
     setUserData(initialState);
     // const payload = {...userData,price: Number(userData.price)}
     try {
-      let res = await fetch("http://localhost:8080/user");
+      let res = await fetch("https://deployed-server-byloki.onrender.com/user");
       let data = await res.json();
       console.log(data);
       var mailAuth = false;
