@@ -5,7 +5,7 @@ export const addUserData =
   (userData, success, navigate, emailExist) => (dispatch) => {
     dispatch({ type: SIGNUP_LOADING });
     axios
-      .post("http://localhost:8080/user", userData)
+      .post("https://deployed-server-byloki.onrender.com/user", userData)
       .then(() => {
         // console.log(res);
         dispatch({ type: SIGNUP_SUCCESS });
