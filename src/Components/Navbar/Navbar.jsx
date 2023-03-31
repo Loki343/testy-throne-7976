@@ -30,91 +30,78 @@ import styles from "./Navbar.module.css";
 import Navbar2 from "./Navbar2";
 import ButtonLogout from "./ButtonLogout";
 import { useToast } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
   {
-    label: "STORE",
+    label: "CATEGORIES",
     children: [
       {
-        label: "MacBook Air",
-        subLabel: "Explore our wide range of collection",
+        label: "Women",
+        subLabel: "Explore our wide range of women's collection",
         href: "/",
       },
       {
-        label: "MacBook Pro",
-        subLabel: "Upgraded version of MAC Book",
+        label: "Men",
+        subLabel: "Explore our wide range of men's collection",
         href: "/",
       },
       {
-        label: "iPhone",
-        subLabel: "It does before think",
+        label: "Children",
+        subLabel: "Thin and soft material",
         href: "/",
       },
       {
-        label: "iPad",
-        subLabel: "World's fastest tablet",
+        label: "Gifts",
+        subLabel: "Get gift items in low price",
         href: "/",
       },
       {
-        label: "Watch",
-        subLabel: "Make your life healthy",
+        label: "New",
+        subLabel: "New items arrive weekly",
         href: "/",
       },
       {
-        label: "Air Pods",
-        subLabel: "Hear music with heart",
+        label: "Coat",
+        subLabel: "Light weight and comfortable",
         href: "/",
       },
       {
-        label: "TV & Home",
-        subLabel: "Upgrade your home to the next level",
+        label: "Bags",
+        subLabel: "Exclusive collections for men and women",
         href: "/",
-      },
-      {
-        label: "Entertainment",
-        subLabel: "Just entertain between work",
-        href: "/",
-      },
-      {
-        label: "Accessories",
-        subLabel: "Go to next Era of life",
-        href: "/",
-      },
+      }
     ],
   },
   {
     label: "WOMEN",
-    href: "/store",
+    href: "/",
   },
   {
     label: "MEN",
-    href: "/store?filter=MacBook+Air&filter=MacBook+Pro",
+    href: "/",
   },
   {
     label: "CHILDREN",
-    href: "/store?filter=Watch",
+    href: "/",
   },
   {
     label: "GIFTS",
-    href: "/store?filter=iPad",
+    href: "/",
   },
   {
     label: "NEW",
-    href: "/store?filter=iPhone",
+    href: "/",
   },
 
   {
     label: "COAT",
-    href: "/store?filter=Airpods",
+    href: "/",
   },
   {
     label: "BAGS",
-    href: "/store?filter=Tv+%26+Home",
-  },
-  {
-    label: "STORY",
-    href: "/store?filter=Entertainment",
-  },
+    href: "/",
+  }
 ];
 
 export default function Navbar() {
@@ -202,9 +189,7 @@ export default function Navbar() {
                     background="lightgrey"
                     color={"black"}
                   >
-                    <span style={{ marginLeft: "4px" }}>
-                      Cart :  0
-                    </span>
+                    <span style={{ marginLeft: "4px" }}>Cart : 0</span>
                   </Tooltip>
                 </Button>
 
@@ -216,7 +201,7 @@ export default function Navbar() {
                 </Button>
                 <>
                   <ButtonLogout
-                  style={{marginRight:'10px'}}
+                    style={{ marginRight: "10px" }}
                     logout={() => {
                       logoutSuccess();
                       localStorage.clear();
@@ -267,6 +252,76 @@ export default function Navbar() {
 const DesktopNav = () => {
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const [query, setQuery] = useState("");
+  const [suggation, setSuggation] = useState([]);
+
+  const products = [
+    {
+      id: 1,
+      title: "Soho Heritage Harrington Jacket",
+      image:
+        "https://assets.burberry.com/is/image/Burberryltd/93FB0DD4-CC1E-4F10-8A59-975E389BA547?$BBY_V2_SL_1x1$&wid=1251&hei=1251",
+      price: 1890.0,
+      price_c: 2490.0,
+      discount: 24.0,
+      size: "XL",
+      color: "Black",
+      label: "RELAXED FIT",
+      category: "Jacket",
+    },
+    {
+      id: 2,
+      title: "Logo Appliqué Lightweight Hooded Jacket",
+      image:
+        "https://assets.burberry.com/is/image/Burberryltd/369E2F9B-9CD2-4000-9794-887E1BD7F277?$BBY_V2_SL_3x4$&wid=400&hei=534",
+      price: 1350.0,
+      price_c: 2490.0,
+      discount: 45.78,
+      size: "XXL",
+      color: "Ink",
+      label: "New in",
+      category: "Jacket",
+    },
+    {
+      id: 3,
+      title: "Mid-length Kensington Heritage Trench Coat",
+      image:
+        "https://assets.burberry.com/is/image/Burberryltd/5479F2F2-9F2B-4909-88FE-AB243C1EFCFC?$BBY_V2_SL_3x4$&wid=400&hei=534",
+      price: 2490.0,
+      price_c: 2990.0,
+      discount: 20.0,
+      size: "XL",
+      color: "Honey",
+      label: "RELAXED FIT",
+      category: "Coat",
+    },
+    {
+      id: 4,
+      title: "Short Camden Heritage Car Coat",
+      image:
+        "https://assets.burberry.com/is/image/Burberryltd/3C346B48-4969-4B83-B147-DB00C1BF44BF?$BBY_V2_SL_3x4$&wid=400&hei=534",
+      price: 2050.0,
+      price_c: 2490.0,
+      discount: 21.46,
+      size: "XL",
+      color: "Coal Blue",
+      label: "RELAXED FIT",
+      category: "Coat",
+    },
+  ];
+
+  useEffect(() => {
+    //run some logic
+    if (query === "") {
+      setSuggation([]);
+    } else {
+      // console.log(query);
+      let newSuggestions = products.filter((item) => {
+        return item.title.toLowerCase().indexOf(query) !== -1 ? true : false;
+      });
+      setSuggation(newSuggestions);
+    }
+  }, [query]);
 
   return (
     <Stack direction={"row"} spacing={4} align="center">
@@ -314,6 +369,8 @@ const DesktopNav = () => {
         </Box>
       ))}
       <Input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
         border={"1px solid"}
         padding={"5px"}
         fontSize={"16px"}
@@ -321,6 +378,51 @@ const DesktopNav = () => {
         color={"BLACK"}
         className={styles.searchInput}
       />
+      {query.length > 0 && (
+        <div
+          className={styles.searchLogo}
+          style={{ marginTop: "4px", color: "white" }}
+        >
+          <span style={{ cursor: "pointer" }}>
+            <RxCross1
+              color="black"
+              onClick={() => {
+                setQuery("");
+              }}
+              cursor={"pointor"}
+            />
+          </span>
+        </div>
+      )}
+      {suggation.length > 0 && (
+        <Box
+          border={"1px solid"}
+          maxH={"200px"}
+          position={"absolute"}
+          w={"30%"}
+          left={"55.9%"}
+          top={"64px"}
+          zIndex={"10"}
+          bg={"black"}
+          borderRadius={"5px"}
+          overflow={"hidden scroll"}
+        >
+          {suggation.map((item) => {
+            return (
+              <Link
+                onClick={() => {
+                  setQuery("");
+                }}
+                // to={`/product/${item.id}`}
+              >
+                <Text color={"whiteAlpha.700"} cursor={"pointer"}>
+                  {item.title}
+                </Text>
+              </Link>
+            );
+          })}
+        </Box>
+      )}
     </Stack>
   );
 };

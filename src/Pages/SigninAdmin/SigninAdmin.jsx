@@ -9,75 +9,52 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Signin.module.css";
-import { useToast } from "@chakra-ui/react";
+import styles from "./SigninAdmin.module.css";
 
-function Signin() {
+function SigninAdmin() {
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
-
   const navigate = useNavigate();
-  const toast = useToast();
-
-  // console.log('auth',isAuth)
-  // all toasts are here
-  const wrongEmail = () => {
-    toast({
-      title: "Wrong Email or Password.",
-      description: "Please enter right email or password!!!",
-      status: "error",
-      duration: 3000,
-      isClosable: true,
-      position: "top",
-    });
-  };
-
-  const loginSuccess = () => {
-    toast({
-      title: "Login Successful.",
-      description: "Thank You For Login!!!",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-      position: "top",
-    });
-  };
-  // all toasts are here
 
   const submitLogin = async () => {
+    // console.log(load);
     try {
-      let res = await fetch(`https://deployed-server-byloki.onrender.com/user`);
+      let res = await fetch(`http://localhost:8080/admin`);
       let data = await res.json();
       // console.log(data);
       let Auth = false;
       for (let i in data) {
         if (data[i].email === email && data[i].password === password) {
           Auth = true;
-          localStorage.setItem("name", data[i].name);
+          localStorage.setItem("adminAuth", data[i].name);
           break;
         }
       }
 
       if (Auth === false) {
-        wrongEmail();
+        alert("Please enter right email or password!");
       } else {
-        loginSuccess();
-        navigate("/");
+        alert("Login Successfull!");
+        navigate("/admin/dashboard");
       }
 
+      console.log(Auth);
     } catch (error) {
       console.log(error);
     }
     setemail("");
     setPassword("");
-    window.location.reload();
   };
 
   return (
     <div>
       <div className={styles.mainDiv}>
-        <Heading color="black" textAlign="center">
-          Sign in
+        <Heading
+          
+          color="black"
+          textAlign="center"
+        >
+          Admin Log in
         </Heading>
         <FormControl>
           <FormLabel>Email address</FormLabel>
@@ -92,7 +69,7 @@ function Signin() {
           <Input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Your Password"
+            placeholder="Your Password Address"
             type="password"
           />
           <FormHelperText>
@@ -100,14 +77,8 @@ function Signin() {
           </FormHelperText>
           <FormHelperText>
             If have no account click{" "}
-            <Link color="black" href="/signup" fontWeight={"600"}>
+            <Link color="black" href="/signup">
               Signup
-            </Link>
-          </FormHelperText>
-          <FormHelperText>
-            Go to admin panel{" "}
-            <Link color="black" fontWeight={"600"} href="/signinadmin">
-              Signin
             </Link>
           </FormHelperText>
           <Button
@@ -117,11 +88,8 @@ function Signin() {
             color="white"
             background="black"
             onClick={submitLogin}
-            _hover={{
-              bg: "rgb(4,4,4)",
-            }}
           >
-            <span className={styles.loginButton}>Sign in</span>
+            <span className={styles.loginButton}>Log in</span>
           </Button>
         </FormControl>
       </div>
@@ -129,4 +97,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default SigninAdmin;

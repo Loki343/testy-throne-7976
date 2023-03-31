@@ -7,9 +7,9 @@
 
 - Kausik Bhaumik (My Linkedin profile :- https://www.linkedin.com/in/kausik-bhaumik-617179229/)
 
--  (My Linkedin profile :- )
+- Tanmoy Roy (My Linkedin profile :- )
 
-- Rishi Raj (My Linkedin profile :- http://www.linkedin.com/in/rishi-raj-bhardwaj)
+- Prashant  (My Linkedin profile :- https://www.linkedin.com/in/prashant-sathawane-b28411209/)
 
 - Deepak Kumar Fathkar (My Linkedin profile :- https://www.linkedin.com/in/deepak-kumar-fathkar-b1678b13b/)
 
