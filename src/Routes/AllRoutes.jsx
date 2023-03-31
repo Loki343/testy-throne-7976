@@ -72,6 +72,7 @@ const AllRoutes = () => {
       <Route path="/women-product" element={<WomenProductPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="*" element={<Error />} />
+
     </Routes>
   );
 };
