@@ -3,6 +3,7 @@ import React from 'react';
 
 const Checkboxfun = ({item,handlesort}) => {
 const dref=React.useRef(null);
+
 const handlecheck=(e)=>{
 let val=(e)
   let status=(dref.current?.checked)
@@ -17,7 +18,7 @@ handlesort(obj)
 
   return (
     <CheckboxGroup colorScheme='green' >
-    <Stack spacing={[1, 4]} direction={['column']}>
+    <Stack spacing={[1, 8]} direction={['column']}>
       <Checkbox onChange={()=>handlecheck(item)} ref={dref} isInvalid>{item}</Checkbox>
     </Stack>
   </CheckboxGroup>
