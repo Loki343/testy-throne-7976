@@ -13,7 +13,8 @@ export const WomenProList = () => {
 
     const [searchParams] = useSearchParams();
     const location=useLocation();
-
+    const activePage=useSelector((store)=>store.ProReducer.activePage)
+    const perPage = useSelector((store) => store.ProReducer.perPage);
     let obj = {
       params: {
         category: searchParams.getAll("category"),
@@ -30,10 +31,20 @@ export const WomenProList = () => {
 
   return (  load.isLoading ? <Loading /> : 
     <div style={{display:'grid' , gridTemplateColumns:"repeat(4, auto)" , gap:"5px" ,}}>
-        {womenProd.length > 0 && womenProd.map((el)=>{
+        {/* {womenProd.length > 0 && womenProd.map((el)=>{
                 return <WomenProduct key={el.id} {...el} />
             })
-        }
+        } */}
+        {womenProd.length > 0 && womenProd
+        .filter((_, index) => {
+          return (
+            index >= perPage * (activePage - 1) &&
+            index < perPage * activePage
+          );
+        })
+        .map((el)=>{
+          return <WomenProduct key={el.id} {...el} />
+        })}
     </div>
   )
 };

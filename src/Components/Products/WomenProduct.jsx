@@ -21,7 +21,6 @@ import {
           bg={'#f6f6f6'}
           mb={"10px"}
           pos={'relative'}
-          zIndex={1}
           lineHeight="5"
           >
           <Box
@@ -74,7 +73,7 @@ import {
               </Text>
             </Stack>
             <Stack direction={'row'} align={'center'}>
-              <Text fontWeight={400} fontSize={'small'}>
+              <Text fontWeight={400} fontSize={'small'} textTransform={'uppercase'}>
               {label}
               </Text>
             </Stack>

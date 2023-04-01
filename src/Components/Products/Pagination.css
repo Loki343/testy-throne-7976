@@ -1,0 +1,37 @@
+
+.pagination{
+  margin: 20px auto;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1000;
+}
+
+.pagination .prevBtn {
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.pagination .nextBtn {
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.pagination button {
+  border: none;
+  height: 30px;
+  width: 30px;
+  font-size: 16px;
+  background-color: inherit;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.pagination .activeBtn {
+  background-color: #03a9f5;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+}
