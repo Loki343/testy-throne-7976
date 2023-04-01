@@ -13,6 +13,9 @@ export const MenProList = () => {
     //console.log(load.isLoading);
     const [searchParams] = useSearchParams();
     const location=useLocation();
+    const activePage=useSelector((store)=>store.ProReducer.activePage)
+    const perPage = useSelector((store) => store.ProReducer.perPage);
+
 
     let obj = {
       params: {
@@ -30,10 +33,20 @@ export const MenProList = () => {
 
   return (  load.isLoading ? <Loading /> : 
     <div style={{display:'grid' , gridTemplateColumns:"repeat(4, auto)" , gap:"5px" ,}}>
-        {menProd.length > 0 && menProd.map((el)=>{
+        {/* {menProd.length > 0 && menProd.map((el)=>{
                 return <MenProduct key={el.id} {...el} />
-            })
-        }
+             })
+        } */}
+        {menProd.length > 0 && menProd
+        .filter((_, index) => {
+          return (
+            index >= perPage * (activePage - 1) &&
+            index < perPage * activePage
+          );
+        })
+        .map((el)=>{
+          return <MenProduct key={el.id} {...el} />
+        })}
     </div>
   )
 };

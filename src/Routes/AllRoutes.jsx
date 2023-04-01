@@ -12,6 +12,7 @@ import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import SigninAdmin from "../Pages/SigninAdmin/SigninAdmin";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import Pagination from "../Components/Products/Pagination";
 
 const AllRoutes = () => {
   return (
@@ -66,10 +67,16 @@ const AllRoutes = () => {
           </>
         }
       /> */}
-      <Route path="/men-product" element={<MenProductPage />} />
+      <Route path="/men-product" 
+       element={
+        <>
+        <MenProductPage /> 
+        <Pagination />
+        </>
+      } />
       <Route path="/men-product:id" element={<SingleProductPage />} />
+      <Route path="/women-product" element={<><WomenProductPage /><Pagination /> </>} />
       <Route path="/women-product:id" element={<SingleProductPage />} />
-      <Route path="/women-product" element={<WomenProductPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="*" element={<Error />} />
 
