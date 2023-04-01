@@ -8,6 +8,7 @@ import WomenProductPage from "../Pages/WomenProductPage";
 import SingleProductPage from "../Pages/Product_to_Payment/SingleProductPage";
 import CartPage from "../Pages/Product_to_Payment/CartPage";
 import Error from "../Components/Products/Error";
+import Dashboard from "../AdminPage/Pages/Dashboard/Dashboard";
 
 
 
@@ -23,6 +24,11 @@ const AllRoutes = () => {
       <Route path="/women-product" element={<WomenProductPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="*" element={<Error />} />
+
+      {/* Admin routes */}
+      <Route path="/admin" element={<Dashboard />} />
+
+
       
     </Routes>
   );

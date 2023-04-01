@@ -1,12 +1,14 @@
 import React from 'react'
-import AllRoter from './AllRoter'
-import SearchBar from './SearchBar'
+import SearchBar from '../searchBar/Searchbar'
+
+
+
 
 export default function RightSection() {
     return (
         <div>
             <SearchBar />
-            <AllRoter />
+            
         </div>
     )
 }
