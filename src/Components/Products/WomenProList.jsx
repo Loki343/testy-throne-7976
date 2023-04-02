@@ -4,6 +4,7 @@ import { getWoMenProducts } from '../../Redux/Products_Reducer/action';
 import Loading from './Loading';
 import { WomenProduct } from './WomenProduct';
 import { useLocation, useSearchParams } from 'react-router-dom';
+import { SimpleGrid} from '@chakra-ui/react';
 
 export const WomenProList = () => {
     const womenProd=useSelector((store)=>store.ProReducer.products);
@@ -13,7 +14,8 @@ export const WomenProList = () => {
 
     const [searchParams] = useSearchParams();
     const location=useLocation();
-
+    const activePage=useSelector((store)=>store.ProReducer.activePage)
+    const perPage = useSelector((store) => store.ProReducer.perPage);
     let obj = {
       params: {
         category: searchParams.getAll("category"),
@@ -29,11 +31,21 @@ export const WomenProList = () => {
     },[location.search]);
 
   return (  load.isLoading ? <Loading /> : 
-    <div style={{display:'grid' , gridTemplateColumns:"repeat(4, auto)" , gap:"5px" ,}}>
-        {womenProd.length > 0 && womenProd.map((el)=>{
+    <SimpleGrid columns={{ sm: 1, md: 2, lg:4 }} gap={2}>
+        {/* {womenProd.length > 0 && womenProd.map((el)=>{
                 return <WomenProduct key={el.id} {...el} />
             })
-        }
-    </div>
+        } */}
+        {womenProd.length > 0 && womenProd
+        .filter((_, index) => {
+          return (
+            index >= perPage * (activePage - 1) &&
+            index < perPage * activePage
+          );
+        })
+        .map((el)=>{
+          return <WomenProduct key={el.id} {...el} />
+        })}
+    </SimpleGrid>
   )
 };

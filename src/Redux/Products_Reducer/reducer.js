@@ -1,11 +1,13 @@
 
-import { GET_MEN_PRODUCTS_SUCCESS,GET_WOMEN_PRODUCTS_SUCCESS, PRODUCTS_FAILURE, PRODUCTS_REQUEST,GET_SINGLE_PRODUCT_SUCCESS } from "./actionTypes";
+import { GET_MEN_PRODUCTS_SUCCESS,GET_WOMEN_PRODUCTS_SUCCESS, PRODUCTS_FAILURE, PRODUCTS_REQUEST,GET_SINGLE_PRODUCT_SUCCESS, HANDLE_PAGE_CHANGE } from "./actionTypes";
 
 export const initialState = {
     isLoading: false,
     isError: false,
     products: [],
     singleProduct: {},
+    activePage: 1,
+    perPage: 8,
 }
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -18,7 +20,10 @@ export const reducer = (state = initialState, { type, payload }) => {
             return {...state , isLoading:false , products:payload};       
         case PRODUCTS_FAILURE:
             return { ...state, isLoading: false, isError: true };
-
+            
+        case HANDLE_PAGE_CHANGE:
+            return {...state , isLoading:false, activePage:payload};  
+        
         case GET_SINGLE_PRODUCT_SUCCESS:
             return { ...state, isLoading: false, singleProduct: payload };
         default:
