@@ -19,7 +19,7 @@ const url = 'https://api.pujakaitem.com/api/products'
 const SingleProductPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch()
-  const { isLoading, isError, singleProduct } = useSelector((store) => store.MenProReducer)
+  const { isLoading, isError, singleProduct } = useSelector((store) => store.ProReducer)
   
   
   

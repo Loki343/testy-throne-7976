@@ -1,12 +1,13 @@
 import axios from "axios";
 
-import { GET_MEN_PRODUCTS_SUCCESS, GET_WOMEN_PRODUCTS_SUCCESS,PRODUCTS_FAILURE, PRODUCTS_REQUEST ,GET_SINGLE_PRODUCT_SUCCESS} from "./actionTypes"
+import { GET_MEN_PRODUCTS_SUCCESS, GET_WOMEN_PRODUCTS_SUCCESS,PRODUCTS_FAILURE, PRODUCTS_REQUEST ,GET_SINGLE_PRODUCT_SUCCESS, HANDLE_PAGE_CHANGE} from "./actionTypes"
 const URL="http://localhost:8080"
+//const URL="https://deployed-server-byloki.onrender.com"
 
 
-export const getMenProducts=()=>(dispatch)=>{
+export const getMenProducts=(Obj)=>(dispatch)=>{
   dispatch({type:PRODUCTS_REQUEST});
-  axios.get(`${URL}/men`)
+  axios.get(`${URL}/men`,Obj)
   .then((res)=>{
     dispatch({type:GET_MEN_PRODUCTS_SUCCESS , payload:res.data})
   }).catch(()=>{
@@ -15,9 +16,9 @@ export const getMenProducts=()=>(dispatch)=>{
 
 };
 
-export const getWoMenProducts=()=>(dispatch)=>{
+export const getWoMenProducts=(Obj)=>(dispatch)=>{
   dispatch({type:PRODUCTS_REQUEST});
-  axios.get(`${URL}/women`)
+  axios.get(`${URL}/women`,Obj)
   .then((res)=>{
     dispatch({type:GET_WOMEN_PRODUCTS_SUCCESS , payload:res.data})
   }).catch(()=>{
@@ -26,7 +27,10 @@ export const getWoMenProducts=()=>(dispatch)=>{
 };
 
 
-
+//Pagination
+export const handlePageChange=(newPage)=>{
+  return {type:HANDLE_PAGE_CHANGE , payload:newPage}
+};
 
 
 

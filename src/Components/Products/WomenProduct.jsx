@@ -15,17 +15,19 @@ import {
         <Box
           role={'group'}
           p={0}
+          pb={"16px"}
           maxW={'330px'}
           w={'full'}
           bg={'#f6f6f6'}
-          mb={"20px"}
+          mb={"10px"}
           pos={'relative'}
-          zIndex={1}>
+          lineHeight="5"
+          >
           <Box
             rounded={'lg'}
             mt={0}
             pos={'relative'}
-            height={'230px'}
+            height={'370px'}
             _after={{
               transition: 'all .3s ease',
               content: '""',
@@ -42,17 +44,19 @@ import {
               },
             }}>
             <Image
-              height={230}
+              height={"100%"}
               width={"100%"}
               objectFit={'cover'}
               src={image}
             />
           </Box>
-          <Stack pt={5} align={'center'}>
+          <Stack pt={5} align={'center'} >
             {/* <Heading color={'gray.500'} fontSize={'xl'} textTransform={'uppercase'}>
               {brand}
             </Heading> */}
-            <Text fontSize={'medium'} fontFamily={'body'} fontWeight={500}>
+            <Text fontSize={'medium'} textAlign={"center"} fontFamily={'body'} fontWeight={500}
+            width={"250px"} overflow={"hidden"} whiteSpace={"nowrap"} textOverflow={"ellipsis"}
+            >
               {title}
             </Text>
             <Stack direction={'row'} align={'center'}>
@@ -64,12 +68,12 @@ import {
               </Text>
             </Stack>
             <Stack direction={'row'} align={'center'}>
-              <Text fontWeight={500} fontSize={'xl'}>
+              <Text fontWeight={500} fontSize={'medium'}>
               {discount}%
               </Text>
             </Stack>
             <Stack direction={'row'} align={'center'}>
-              <Text fontWeight={400} fontSize={'xl'}>
+              <Text fontWeight={400} fontSize={'small'} textTransform={'uppercase'}>
               {label}
               </Text>
             </Stack>
