@@ -112,14 +112,14 @@ export default function Navbar() {
   const toast = useToast();
   const dispatch = useDispatch();
 
+  const {cart} = useSelector((store) => {
+    return store.ProReducer;
+  });
+
   useEffect(() => {
     dispatch(getCartProducts());
   }, []);
 
-  const cart = useSelector((store) => {
-    return store.ProReducer.cart;
-  });
-  // console.log(cart);
   const logoutSuccess = () => {
     toast({
       title: "Logout Successful.",
@@ -134,7 +134,15 @@ export default function Navbar() {
   return (
     <>
       <Navbar2 />
-      <Box position={"sticky"} top={"0px"} zIndex={"1000"} boxShadow={' rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;'} mb={'30px'}>
+      <Box
+        position={"sticky"}
+        top={"0px"}
+        zIndex={"1000"}
+        boxShadow={
+          " rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;"
+        }
+        mb={"30px"}
+      >
         <Flex
           // border={"1px solid"}
           bg={"white"}
@@ -1812,7 +1820,7 @@ const DesktopNav = () => {
               <Link
                 onClick={() => {
                   setQuery("");
-                  window.reload()
+                  window.reload();
                 }}
                 to={`/product/${item.id}`}
               >

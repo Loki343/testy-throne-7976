@@ -57,7 +57,7 @@ export const MenProduct = ({
     });
   };
   const handleAddToCart = () => {
-    const prod = { image, title, id, discount, label, price, price_c };
+    const prod = { image, title, id, discount, label, price, price_c,quantity:1 };
     if(localStorage.getItem('name')){
       dispatch(addToCart(prod, addToCartSuccess, alreadyAdded));
       window.location.reload()

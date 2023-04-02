@@ -1,45 +1,74 @@
-import { AddIcon, DeleteIcon } from '@chakra-ui/icons'
-import { Box, Button, Image, Stack } from '@chakra-ui/react'
-import React from 'react'
+import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Button,
+  Image,
+  Stack,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Td,
+  Tfoot,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
+import React from "react";
 
-const CartItem = ({ productId,imgsrc, title, quantity, setQuantity, handleDelete, handleUpdate }) => {
-
-const updatedData={
-  quantity: quantity,
-
-}
-
-
+const CartItem = ({
+  productId,
+  imgsrc,
+  title,
+  quantity,
+  setQuantity,
+  handleDelete,
+  handleUpdate,
+}) => {
+  const updatedData = {
+    quantity: quantity,
+  };
 
   return (
     <Box>
-      <Box className='imageAndInfo'>
-        <Box className='productImage'>
-          <Image src={imgsrc} alt={title} />
-        </Box>
-        <Box className='productInfo'>
-          <h3>{title}</h3>
-
-          <p>Quantity:{quantity}</p>
-        </Box>
-        <Stack direction={'row'}>
-          <Button onClick={() => quantity < 5 && setQuantity(quantity + 1)} color="green.800" bgColor={'green.200'}>
-            <AddIcon />
-          </Button>
-
-          <Button onClick={() => quantity > 1 && setQuantity(quantity - 1)} color="red.800" bgColor={'red.200'}>
-            
-          </Button>
-        </Stack>
-      </Box>
-      <Stack direction={'row'}>
-        <Button onClick={() => handleUpdate(updatedData)} color="green.800" bgColor={'red.200'}>
-          Update
-        </Button>
-      </Stack>
-      <Button onClick={() => handleDelete(productId)} color="red.800" bgColor={'red.200'}><DeleteIcon/></Button>
+      <TableContainer>
+        <Table variant="simple">
+          <TableCaption>Imperial to metric conversion factors</TableCaption>
+          <Thead>
+            <Tr>
+              <Th>Prod ID</Th>
+              <Th>into</Th>
+              <Th >multiply by</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>{productId}</Td>
+              <Td>millimetres (mm)</Td>
+              <Td >25.4</Td>
+            </Tr>
+            <Tr>
+              <Td>feet</Td>
+              <Td>centimetres (cm)</Td>
+              <Td isNumeric>30.48</Td>
+            </Tr>
+            <Tr>
+              <Td>yards</Td>
+              <Td>metres (m)</Td>
+              <Td isNumeric>0.91444</Td>
+            </Tr>
+          </Tbody>
+          <Tfoot>
+            <Tr>
+              <Th>To convert</Th>
+              <Th>into</Th>
+              <Th isNumeric>multiply by</Th>
+            </Tr>
+          </Tfoot>
+        </Table>
+      </TableContainer>
     </Box>
-  )
-}
+  );
+};
 
-export default CartItem
+export default CartItem;

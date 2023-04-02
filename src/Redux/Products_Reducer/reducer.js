@@ -17,6 +17,7 @@ export const initialState = {
   products: [],
   singleProduct: {},
   cart: [],
+  cartLength:0,
   activePage: 1,
   perPage: 8,
 };
@@ -42,7 +43,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       return { ...state, isLoading: false };
 
     case GET_FROM_CART_SUCCESS:
-      return { ...state, isLoading: false, cart: payload };
+      return { ...state, isLoading: false, cart: payload ,cartLength:payload.length};
 
     case UPDATE_CART_SUCCESS:
       return { ...state, isLoading: false, };

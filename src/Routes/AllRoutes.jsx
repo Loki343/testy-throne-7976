@@ -93,7 +93,7 @@ const AllRoutes = () => {
       />
 
   
-      <Route path="/cart" element={<CartPage />} />
+      <Route path="/cart" element={<><Navbar /><CartPage /><Footer /></>} />
       <Route path="/checkout" element={<Checkout />} />
 
       <Route path="/women-product/:id" element={<><Navbar /><SingleProductPageWomen /><Footer /></>} />
