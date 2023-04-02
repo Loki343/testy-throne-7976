@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../Redux/Products_Reducer/action";
+import { Link } from "react-router-dom";
 
 export const WomenProduct = ({
   image,
@@ -22,33 +23,47 @@ export const WomenProduct = ({
   price,
   price_c,
 }) => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const toast = useToast();
 
-    const addToCartSuccess = () => {
-      toast({
-        title: "Added Successful.",
-        description: "Your product is added",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-        position: "top",
-      });
-    };
-    const alreadyAdded = () => {
-      toast({
-        title: "Already Added in Cart",
-        description: "Your product is already added",
-        status: "warning",
-        duration: 3000,
-        isClosable: true,
-        position: "top",
-      });
-    };
+  const addToCartSuccess = () => {
+    toast({
+      title: "Added Successful.",
+      description: "Your product is added",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+  const alreadyAdded = () => {
+    toast({
+      title: "Already Added in Cart",
+      description: "Your product is already added",
+      status: "warning",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+  const LoginFirst = () => {
+    toast({
+      title: "Please login",
+      description: "Login to add Product",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+  };
   const handleAddToCart = () => {
     const prod = { image, title, id, discount, label, price, price_c };
-    dispatch(addToCart(prod,addToCartSuccess,alreadyAdded))
+    if (localStorage.getItem("name")) {
+      dispatch(addToCart(prod, addToCartSuccess, alreadyAdded));
+      window.location.reload()
+    } else {
+      LoginFirst();
+    }
   };
 
   return (
@@ -85,12 +100,15 @@ export const WomenProduct = ({
             },
           }}
         >
-          <Image
-            height={"100%"}
-            width={"100%"}
-            // objectFit={'cover'}
-            src={image}
-          />
+          <Link to={`/women-product/${id}`}>
+            <Image
+              height={"100%"}
+              width={"100%"}
+              // objectFit={'cover'}
+              src={image}
+              cursor={"pointer"}
+            />
+          </Link>
         </Box>
         <Stack pt={5} align={"center"}>
           {/* <Heading color={'gray.500'} fontSize={'xl'} textTransform={'uppercase'}>
