@@ -55,8 +55,8 @@ import {
             {/* <Heading color={'gray.500'} fontSize={'xl'} textTransform={'uppercase'}>
               {brand}
             </Heading> */}
-            <Text fontSize={'medium'} textAlign={"center"} fontFamily={'body'} fontWeight={500}
-            width={"250px"} overflow={"hidden"} whiteSpace={"nowrap"} textOverflow={"ellipsis"}
+            <Text fontSize={'medium'} padding={"0 15px"} textAlign={"center"} fontFamily={'body'} fontWeight={500}
+            width={"200px"} overflow={"hidden"} whiteSpace={"nowrap"} textOverflow={"ellipsis"}
             >              
             {title}
             </Text>
