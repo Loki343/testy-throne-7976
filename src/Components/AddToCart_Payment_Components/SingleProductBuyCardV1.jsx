@@ -1,98 +1,113 @@
-import {
-  Badge,
+import { Badge, Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Stack, Text } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { addToCartPusher, getCartData } from '../../Redux/CartReducer/action';
 
-  Center,
-  Flex,
-  Heading,
-  
-  Stack,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import SinProductImg from './SinProductImg';
-import AddToCart from './Tinycomponents/AddToCart';
-import FormatPrice from './Tinycomponents/FormatPrice';
 
 export default function SingleProductBuyCardV1({ product }) {
+
+  // console.log('product', product);
+  const dispatch = useDispatch();
+  const { cartData } = useSelector((store) => store.cartReducer)
+  const [quantity, setQuantity] = useState(1)
+
+
+
+const productData={
+  productId:product.id,
+  quantity:quantity,
+  product:product,
+}
+
+
+  const handleBuy = (productData) => {
+
+    if (cartData.some((data) => data.productId == product.id)) {
+      alert("product already added in the cart")
+    } else {
+      dispatch(addToCartPusher(productData))
+
+      alert('product added successfully in the cart')
+    }
+
+    dispatch(getCartData())
+  }
+
+  useEffect(() => {
+    dispatch(getCartData())
+  }, [])
+
+
+
+
+
   return (
-    <Center py={6}>
-      <Stack
-        borderWidth="1px"
-        borderRadius="lg"
-        w='100%'
-        height={{ sm: '476px', md: 'auto' }}
-        direction={{ base: 'column', md: 'row' }}
-        bg={useColorModeValue('white', 'gray.900')}
-        boxShadow={'sm'}
-        padding={7}>
-        <Flex flex={1} bg="blue.200">
-
-          <SinProductImg image={product.image} />
-
-        </Flex>
-        <Stack
-          flex={1}
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="start"
-          p={6}
-          pt={2}>
-          <Heading fontSize={'2xl'} fontFamily={'body'}>
-            {product.name}
-          </Heading>
-          <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
-            {product.company}
+    <Card maxW='sm'>
+      <CardBody>
+        <Image
+          src={product.image}
+          alt={product.title}
+          borderRadius='lg'
+        />
+        <Stack mt='6' spacing='3'>
+          <Heading size='md'>{product.title}</Heading>
+          <Box>
+            <Text>MRP : $ {product.price_c}</Text>
+            <Stack direction={'row'}>
+              <Badge colorScheme={'green'}>SIZE: {product.size}</Badge>
+              <Badge colorScheme={'red'}>{product.label}</Badge>
+              <Badge colorScheme={'blue'}>{product.category}</Badge>
+            </Stack>
+            <Text>COLOUR: <Button bgColor={product.color} m='10px' rounded={'full'}></Button></Text>
+          </Box>
+          <Text>Deal of the day : {product.discount} %</Text>
+          <Text color='blue.600' fontSize='2xl'>
+            ${product.price}
           </Text>
-          <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
-            MRP:
-            <del>
-              <FormatPrice price={+product.price } />
-            </del>
-            {/* for brand */}
-          </Text>
-
-          <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
-            <Badge  px={2}  py={1}  bg={useColorModeValue('gray.50', 'gray.800')}  fontWeight={'400'}>
-             Catagory:Jacket
-            </Badge>
-            <Badge   px={2}   py={1}   bg={useColorModeValue('gray.50', 'gray.800')}   fontWeight={'400'}>   Label:relaxfit
-            </Badge>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('gray.50', 'gray.800')}
-              fontWeight={'400'}>
-              #music
-            </Badge>
-          </Stack>
-
-
-
-
-          {product.stock > 0 && <AddToCart product={product} />}
-
-
-
-          <Stack>
-            <Text
-              textAlign={'center'}
-              color={useColorModeValue('gray.700', 'gray.400')}
-              px={3}>
-              Product Name:{product.name} -
-              {product.description}
-              
-            </Text>
-          </Stack>
-
         </Stack>
+      </CardBody>
+      <Divider color={'gray.200'} />
+
+      <ButtonGroup spacing='2' m={'10px auto'} display='inline-block' >
+
+        <Button variant='solid' colorScheme='green' onClick={() => quantity < 5 && setQuantity(quantity + 1)}>
+          +
+        </Button>
+          <Button >{quantity}</Button>
+
+        <Button variant='solid' colorScheme='red' onClick={() => quantity > 1 && setQuantity(quantity - 1)}>-</Button>
+
+
+      </ButtonGroup>
+
+
+      <Divider color={'gray.200'} />
 
 
 
+      <CardFooter>
+        <ButtonGroup spacing='2' m={'10px auto'} display='inline-block'>
+          <Link to='/cart'>
+            <Button variant='solid' colorScheme='green' onClick={() => handleBuy(productData)}>
+              Buy now
+            </Button>
+          </Link>
+          <Popover>
+            <PopoverTrigger>
+              <Button variant='solid' colorScheme='yellow'>Send Gift</Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverArrow />
+              <PopoverCloseButton />
+              <PopoverHeader>Attention !</PopoverHeader>
+              <PopoverBody>In this time we are unavalable to provide this service.For further update we are notify you </PopoverBody>
+            </PopoverContent>
+          </Popover>
 
-      </Stack>
-
-
-    </Center>
+        </ButtonGroup>
+      </CardFooter>
+    </Card>
   );
 }
 

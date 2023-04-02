@@ -1,8 +1,8 @@
 import axios from "axios";
 
 import { GET_MEN_PRODUCTS_SUCCESS, GET_WOMEN_PRODUCTS_SUCCESS,PRODUCTS_FAILURE, PRODUCTS_REQUEST ,GET_SINGLE_PRODUCT_SUCCESS} from "./actionTypes"
-const URL="http://localhost:8080"
-//const URL="https://deployed-server-byloki.onrender.com"
+// const URL="http://localhost:8080"
+const URL="https://deployed-server-byloki.onrender.com"
 
 
 export const getMenProducts=(Obj)=>(dispatch)=>{
@@ -40,10 +40,12 @@ export const getWoMenProducts=(Obj)=>(dispatch)=>{
 
 // API Call For single Product Call
 
-export const getSingleProduct=(url)=>(dispatch)=>{
+export const getSingleProduct=(id)=>(dispatch)=>{
   dispatch({type:PRODUCTS_REQUEST});
-  axios.get(url)   
+ 
+  axios.get(`${URL}/men/${id}`) 
   .then((res)=>{
+    
     dispatch({type: GET_SINGLE_PRODUCT_SUCCESS, payload:res.data})
   }).catch(()=>{
     dispatch({type:PRODUCTS_FAILURE});

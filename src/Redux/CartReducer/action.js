@@ -12,19 +12,10 @@ const url = 'http://localhost:8080/cartData';
 
 // ========================post card data=====================================
 
-export const addToCartPusher = (product) => (dispatch) => {
+export const addToCartPusher = (productData) => (dispatch) => {
   dispatch({ type: ADD_TO_CART_PROCESS })
-console.log("This console on action .js",product)
-  axios.post(url, {
-    productId: product.productId,
-    color: product.color,
-    product_price: product.product.price,
-    total_Price: (product.product.price * product.quantity),
-    quantity: product.quantity,
-    title: product.product.name,
-    image: product.product.image[0],
-    product_origin: product.product,
-  }).then((response) => {
+console.log("This console on action .js",productData)
+  axios.post(url, productData).then((response) => {
     console.log(response)
     dispatch({ type: ADD_TO_CART_SUCCESS })
   }).then((error) => {

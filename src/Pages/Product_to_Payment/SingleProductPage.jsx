@@ -7,9 +7,7 @@ import Error from '../../Components/Products/Error';
 import Loading from '../../Components/Products/Loading';
 import { getSingleProduct } from '../../Redux/Products_Reducer/action';
 
-// API URL
-const url = 'https://api.pujakaitem.com/api/products'
-//
+
 
 
 
@@ -22,12 +20,13 @@ const SingleProductPage = () => {
   const dispatch = useDispatch()
   const { isLoading, isError, singleProduct } = useSelector((store) => store.ProReducer)
 
-  
-  id="thapaserialnoa";
+  // console.log('Single product',singleProduct)
+
+  id=3;
   
   useEffect(() => {
   
-    dispatch(getSingleProduct(`${url}?id=${id}`))
+    dispatch(getSingleProduct(id))
     // dispatch(getSingleProduct(`${url}?id=thapaserialnoc`))
   
   }, [])
