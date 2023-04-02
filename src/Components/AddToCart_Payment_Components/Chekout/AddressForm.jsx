@@ -19,16 +19,16 @@ import { Button } from '@chakra-ui/react';
 
 export default function AddressForm() {
 
-const [firstName, setFirstName]=React.useState('');
-const [lastName, setLastName]=React.useState('');
-const [state,setState]=React.useState('');
-const [city, setCity]=React.useState('');
-const [country, setCountry]=React.useState('');
-const [zip, setZip]=React.useState('');
-const [phone, setPhone]=React.useState('');
-const [email, setEmail]=React.useState('');
-const [address, setAddress]=React.useState('');
-const [address2, setAddress2]=React.useState('');
+  const [firstName, setFirstName]=React.useState('');
+  const [lastName, setLastName]=React.useState('');
+  const [state,setState]=React.useState('');
+  const [city, setCity]=React.useState('');
+  const [country, setCountry]=React.useState('');
+  const [zip, setZip]=React.useState('');
+  const [phone, setPhone]=React.useState('');
+  const [email, setEmail]=React.useState('');
+  const [address, setAddress]=React.useState('');
+  const [address2, setAddress2]=React.useState('');
 
 
 

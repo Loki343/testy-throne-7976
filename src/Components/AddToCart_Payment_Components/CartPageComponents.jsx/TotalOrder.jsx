@@ -1,8 +1,9 @@
 import { Box, Button,Image } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
-const TotalOrder = () => {
+const TotalOrder = ({totalPrice}) => {
   return (
    
   
@@ -18,21 +19,28 @@ const TotalOrder = () => {
                 <hr/>
                 <Box m={'10px'} >
                     <p>BAG TOTAL :</p>
-                    <p id="totolPay"></p>
+                    <p id="totolPay">{totalPrice}</p>
                 </Box>
                 <Box m={"10px"} display={'flex'} justifyContent={"space-between"} alignItems={'center'}>
                     <p>BAG SHIPPING</p>
-                    <p>$15</p>
+                    <p>$150</p>
                 </Box>
                 <p>Other shipping options in checkout </p>
             
                 <Box m={"10px"} display={'flex'} justifyContent={"space-between"} alignItems={'center'}>
                     <p>TO PAY</p>
-                    <p id="finalPay">$16</p>
+                    <p id="finalPay">{totalPrice}+$150={totalPrice+150}</p>
                 </Box>
-                <Button display={'inline-block'} w="100%" rounded={'none'} color={'white'} bgColor={"#116a60"} id="secureBtn">
+                <Link to='/checkout'>
+                <Button
+                 display={'inline-block'} 
+                 w="100%" rounded={'none'} 
+                 color={'white'}
+                  bgColor={"#116a60"}
+                   id="secureBtn">
                     SECURE CHECKOUT
                 </Button>
+                </Link>
                 <Box id="payBtn" mt={"10px"} p={'10px'} bgColor={'#ffc439'} color={'#000000'} height="50px" display={'flex'} justifyContent={'space-between'}>
                     Pay With 
                     <Image height={'70%'} src="https://logos-download.com/wp-content/uploads/2016/03/PayPal_horizontally_Logo_2014-700x171.png" alt="" />

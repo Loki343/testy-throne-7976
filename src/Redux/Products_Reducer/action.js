@@ -9,6 +9,8 @@ import {
   HANDLE_PAGE_CHANGE,
   ADD_TO_CART_SUCCESS,
   GET_FROM_CART_SUCCESS,
+  UPDATE_CART_SUCCESS,
+  REMOVE_FROM_CART_SUCCESS,
 } from "./actionTypes";
 //const URL="http://localhost:8080"
 const URL = "https://deployed-server-byloki.onrender.com";
@@ -82,3 +84,23 @@ export const getCartProducts = () => (dispatch) => {
       dispatch({ type: PRODUCTS_FAILURE });
     });
 };
+
+export const updateCartProduct = (id, updateData) => (dispatch) => {
+  dispatch({ type: PRODUCTS_REQUEST });
+  return axios
+    .patch(`http://localhost:8080/cart/${id}`, updateData).then((response) => {
+      dispatch({ type: UPDATE_CART_SUCCESS, payload: response.data });
+    }).catch((error) => {
+      dispatch({ type: PRODUCTS_FAILURE });
+    });
+}
+
+export const removeCartdata = (id) => (dispatch) => {
+  dispatch({ type: PRODUCTS_REQUEST });
+  return axios
+    .delete(`http://localhost:8080/cart/${id}`).then((response) => {
+      dispatch({ type: REMOVE_FROM_CART_SUCCESS, payload: response.data });
+    }).catch((error) => {
+      dispatch({ type: PRODUCTS_FAILURE });
+    })
+}

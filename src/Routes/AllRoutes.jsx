@@ -5,6 +5,7 @@ import { MenProductPage } from "../Pages/MenProductPage";
 import Signin from "../Pages/Signin/Signin";
 import Signup from "../Pages/Signup/Signup";
 import WomenProductPage from "../Pages/WomenProductPage";
+
 import Error from "../Components/Products/Error";
 import Dashboard from "../AdminPage/Pages/Dashboard/Dashboard";
 import SearchBar from "../AdminPage/Navbar/SearchBar";
@@ -20,8 +21,13 @@ import Footer from "../Components/Footer/Footer";
 import SigninAdmin from "../Pages/SigninAdmin/SigninAdmin";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import Pagination from "../Components/Products/Pagination";
+
+import CartPage from "../Pages/CartPage";
+import Checkout from "../Components/AddToCart_Payment_Components/Chekout/Checkout";
+
 import SingleProductPageWomen from "../Pages/SingleProductPageWomen";
 import SingleProductPageMen from "../Pages/SingleProductPageMen";
+
 
 const AllRoutes = () => {
   return (
@@ -85,10 +91,16 @@ const AllRoutes = () => {
           </>
         }
       />
+
+  
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/checkout" element={<Checkout />} />
+
       <Route path="/women-product/:id" element={<><Navbar /><SingleProductPageWomen /><Footer /></>} />
       <Route path="/men-product/:id" element={<><Navbar /><SingleProductPageMen /><Footer /></>} />
       <Route path="/product/:id" element={<><Navbar /><SingleProductPageMen /><Footer /></>} />
       {/* <Route path="/cart" element={<CartPage />} /> */}
+
       <Route path="*" element={<Error />} />
 
       {/* Admin routes */}

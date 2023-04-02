@@ -7,6 +7,8 @@ import {
   HANDLE_PAGE_CHANGE,
   ADD_TO_CART_SUCCESS,
   GET_FROM_CART_SUCCESS,
+  UPDATE_CART_SUCCESS,
+  REMOVE_FROM_CART_SUCCESS,
 } from "./actionTypes";
 
 export const initialState = {
@@ -40,7 +42,14 @@ export const reducer = (state = initialState, { type, payload }) => {
       return { ...state, isLoading: false };
 
     case GET_FROM_CART_SUCCESS:
-      return { ...state, isLoading: false, cart:payload };
+      return { ...state, isLoading: false, cart: payload };
+
+    case UPDATE_CART_SUCCESS:
+      return { ...state, isLoading: false, };
+
+    case REMOVE_FROM_CART_SUCCESS:
+      return { ...state, isLoading: false, };
+
     default:
       return state;
   }
