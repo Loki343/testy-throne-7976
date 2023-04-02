@@ -1,7 +1,7 @@
 import React from 'react'
-import SearchBar from '../../Components/Searchbar'
 import AdminNavbar from '../../Navbar/Navbar'
 import Order from './Order'
+import SearchBar from '../../Navbar/SearchBar'
 
 const RealAdminOrder = () => {
   return (

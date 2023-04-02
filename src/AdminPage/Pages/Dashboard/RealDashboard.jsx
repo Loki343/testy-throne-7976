@@ -1,7 +1,7 @@
 import React from 'react'
-import SearchBar from '../../Navbar/SearchBar'
 import AdminNavbar from '../../Navbar/Navbar'
 import Dashboard from './Dashboard'
+import SearchBar from '../../Navbar/SearchBar'
 
 const RealDashboard = () => {
   return (

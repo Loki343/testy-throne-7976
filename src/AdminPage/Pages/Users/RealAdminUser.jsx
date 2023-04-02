@@ -1,8 +1,8 @@
 import React from 'react'
 
-import SearchBar from '../../Components/Searchbar'
 import AdminNavbar from '../../Navbar/Navbar'
 import Users from './Users'
+import SearchBar from '../../Navbar/SearchBar'
 
 
 const RealAdminUser = () => {
