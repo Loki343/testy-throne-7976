@@ -1,8 +1,10 @@
 import axios from "axios";
 
-import { GET_MEN_PRODUCTS_SUCCESS, GET_WOMEN_PRODUCTS_SUCCESS,PRODUCTS_FAILURE, PRODUCTS_REQUEST ,GET_SINGLE_PRODUCT_SUCCESS} from "./actionTypes"
-// const URL="http://localhost:8080"
+
+import { GET_MEN_PRODUCTS_SUCCESS, GET_WOMEN_PRODUCTS_SUCCESS,PRODUCTS_FAILURE, PRODUCTS_REQUEST ,GET_SINGLE_PRODUCT_SUCCESS, HANDLE_PAGE_CHANGE} from "./actionTypes"
+//const URL="http://localhost:8080"
 const URL="https://deployed-server-byloki.onrender.com"
+
 
 
 export const getMenProducts=(Obj)=>(dispatch)=>{
@@ -27,7 +29,10 @@ export const getWoMenProducts=(Obj)=>(dispatch)=>{
 };
 
 
-
+//Pagination
+export const handlePageChange=(newPage)=>{
+  return {type:HANDLE_PAGE_CHANGE , payload:newPage}
+};
 
 
 

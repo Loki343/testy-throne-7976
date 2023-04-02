@@ -18,15 +18,16 @@ import SingleProductPage from "./Pages/Product_to_Payment/SingleProductPage";
 function App() {
   return (
     <div className="App">
+
       
       <AllRoutes />
 
       <BackToTop/>
       
-    <SingleProductPage/>
 
-      <Footer />
-  {/* <Checkout /> */}
+
+     
+
     </div>
   );
 }

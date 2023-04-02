@@ -21,7 +21,7 @@ import {
           bg={'#f6f6f6'}
           mb={"10px"}
           pos={'relative'}
-          zIndex={1}
+          
           lineHeight="5"
           >
           <Box
@@ -55,8 +55,8 @@ import {
             {/* <Heading color={'gray.500'} fontSize={'xl'} textTransform={'uppercase'}>
               {brand}
             </Heading> */}
-            <Text fontSize={'medium'} textAlign={"center"} fontFamily={'body'} fontWeight={500}
-            width={"250px"} overflow={"hidden"} whiteSpace={"nowrap"} textOverflow={"ellipsis"}
+            <Text fontSize={'medium'} padding={"0 15px"} textAlign={"center"} fontFamily={'body'} fontWeight={500}
+            width={"200px"} overflow={"hidden"} whiteSpace={"nowrap"} textOverflow={"ellipsis"}
             >              
             {title}
             </Text>
@@ -74,7 +74,7 @@ import {
               </Text>
             </Stack>
             <Stack direction={'row'} align={'center'}>
-              <Text fontWeight={400} fontSize={'small'}>
+              <Text fontWeight={400} fontSize={'small'} textTransform={'uppercase'}>
               {label}
               </Text>
             </Stack>

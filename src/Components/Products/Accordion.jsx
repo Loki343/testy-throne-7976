@@ -117,104 +117,6 @@ const Accordionfun = () => {
   <h2>
     <AccordionButton>
       <Box as="span" flex='1' textAlign='left'>
-       <Text fontSize={"18px"} p={"6px 0"}>Price</Text>
-      </Box>
-      <AccordionIcon />
-    </AccordionButton>
-  </h2>
-  <AccordionPanel pb={4}>
-      <Box >
-      <input type="checkbox"  
-      //  value={"Jacket"}
-      //  onChange={handleChange}
-      //  checked={category.includes("Jacket")}
-      />&nbsp;
-      <label >100 To 500</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>500 To 1000</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>1000 To 1500</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>1500 To 2000</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>2000 To 2500</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>2500 To 3000</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>3000 To 3500</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>3500 To 4000</label>
-      </Box>
-  </AccordionPanel>
-</AccordionItem>
-
-<AccordionItem>
-  <h2>
-    <AccordionButton>
-      <Box as="span" flex='1' textAlign='left'>
-       <Text fontSize={"18px"} p={"6px 0"}>Discounts</Text>
-      </Box>
-      <AccordionIcon />
-    </AccordionButton>
-  </h2>
-  <AccordionPanel pb={4}>
-      <Box >
-      <input type="checkbox"  />&nbsp;
-      <label >1% To 10%</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>10% To 20%</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>20% To 30%</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>30% To 40%</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>40% To 50%</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>50% To 60%</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>60% To 70%</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>70% To 80%</label>
-      </Box>
-      <Box>
-      <input type="checkbox" />&nbsp;      
-      <label>80% To 90%</label>
-      </Box>
-  </AccordionPanel>
-</AccordionItem>
-
-<AccordionItem>
-  <h2>
-    <AccordionButton>
-      <Box as="span" flex='1' textAlign='left'>
        <Text fontSize={"18px"} p={"6px 0"}>Colors</Text>
       </Box>
       <AccordionIcon />
@@ -225,7 +127,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Black"}
       onChange={handleChangeColors}
-      checked={category.includes("Black")} 
+      checked={color.includes("Black")} 
       />&nbsp;
       <label>Black</label>
       </Box>
@@ -233,7 +135,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"White"}
       onChange={handleChangeColors}
-      checked={category.includes("White")} 
+      checked={color.includes("White")} 
       />&nbsp;      
       <label>White</label>
       </Box>
@@ -241,7 +143,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Brown"}
       onChange={handleChangeColors}
-      checked={category.includes("Brown")} 
+      checked={color.includes("Brown")} 
       />&nbsp;      
       <label>Brown</label>
       </Box>
@@ -249,7 +151,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Charcoal"}
       onChange={handleChangeColors}
-      checked={category.includes("Charcoal")} 
+      checked={color.includes("Charcoal")} 
       />&nbsp;      
       <label>Charcoal</label>
       </Box>
@@ -257,7 +159,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Blue"}
       onChange={handleChangeColors}
-      checked={category.includes("Blue")} 
+      checked={color.includes("Blue")} 
       />&nbsp;      
       <label>Blue</label>
       </Box>
@@ -265,7 +167,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Archive Beige"}
       onChange={handleChangeColors}
-      checked={category.includes("Archive Beige")} 
+      checked={color.includes("Archive Beige")} 
       />&nbsp;       
       <label>Archive Beige</label>
       </Box>
@@ -273,7 +175,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Red"}
       onChange={handleChangeColors}
-      checked={category.includes("Red")} 
+      checked={color.includes("Red")} 
       />&nbsp;      
       <label>Red</label>
       </Box>
@@ -281,7 +183,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Camel"}
       onChange={handleChangeColors}
-      checked={category.includes("Camel")} 
+      checked={color.includes("Camel")} 
       />&nbsp;     
       <label>Camel</label>
       </Box>
@@ -289,7 +191,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Marigold"}
       onChange={handleChangeColors}
-      checked={category.includes("Marigold")} 
+      checked={color.includes("Marigold")} 
       />&nbsp;      
       <label>Marigold</label>
       </Box>
@@ -297,7 +199,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Orange"}
       onChange={handleChangeColors}
-      checked={category.includes("Orange")} 
+      checked={color.includes("Orange")} 
       />&nbsp;       
       <label>Orange</label>
       </Box>
@@ -305,7 +207,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"Honey"}
       onChange={handleChangeColors}
-      checked={category.includes("Honey")} 
+      checked={color.includes("Honey")} 
       />&nbsp;     
       <label>Honey</label>
       </Box>
@@ -326,7 +228,7 @@ const Accordionfun = () => {
       <input type="checkbox"  
       value={"S"}
       onChange={handleChangeSizes}
-      checked={category.includes("S")} 
+      checked={size.includes("S")} 
       />&nbsp;
       <label>S</label>
       </Box>
@@ -334,7 +236,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"M"}
       onChange={handleChangeSizes}
-      checked={category.includes("M")} 
+      checked={size.includes("M")} 
       />&nbsp;      
       <label>M</label>
       </Box>
@@ -342,7 +244,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"L"}
       onChange={handleChangeSizes}
-      checked={category.includes("L")} 
+      checked={size.includes("L")} 
       />&nbsp;      
       <label>L</label>
       </Box>
@@ -350,7 +252,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"XL"}
       onChange={handleChangeSizes}
-      checked={category.includes("XL")} 
+      checked={size.includes("XL")} 
       />&nbsp;    
       <label>XL</label>
       </Box>
@@ -358,7 +260,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"XXL"}
       onChange={handleChangeSizes}
-      checked={category.includes("XXL")} 
+      checked={size.includes("XXL")} 
       />&nbsp;      
       <label>XXL</label>
       </Box>
@@ -366,7 +268,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"35"}
       onChange={handleChangeSizes}
-      checked={category.includes("35")} 
+      checked={size.includes("35")} 
       />&nbsp;      
       <label>34</label>
       </Box>
@@ -374,7 +276,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"36"}
       onChange={handleChangeSizes}
-      checked={category.includes("36")} 
+      checked={size.includes("36")} 
       />&nbsp;      
       <label>36</label>
       </Box>
@@ -382,7 +284,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"37"}
       onChange={handleChangeSizes}
-      checked={category.includes("37")} 
+      checked={size.includes("37")} 
       />&nbsp;      
       <label>37</label>
       </Box>
@@ -390,7 +292,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"38"}
       onChange={handleChangeSizes}
-      checked={category.includes("38")} 
+      checked={size.includes("38")} 
       />&nbsp;     
       <label>38</label>
       </Box>
@@ -398,7 +300,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"39"}
       onChange={handleChangeSizes}
-      checked={category.includes("39")} 
+      checked={size.includes("39")} 
       />&nbsp;      
       <label>39</label>
       </Box>
@@ -406,7 +308,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"40"}
       onChange={handleChangeSizes}
-      checked={category.includes("40")} 
+      checked={size.includes("40")} 
       />&nbsp;      
       <label>40</label>
       </Box>
@@ -414,7 +316,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"41"}
       onChange={handleChangeSizes}
-      checked={category.includes("41")} 
+      checked={size.includes("41")} 
       />&nbsp;      
       <label>41</label>
       </Box>
@@ -422,7 +324,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"42"}
       onChange={handleChangeSizes}
-      checked={category.includes("42")} 
+      checked={size.includes("42")} 
       />&nbsp;      
       <label>42</label>
       </Box>
@@ -430,7 +332,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"75"}
       onChange={handleChangeSizes}
-      checked={category.includes("75")} 
+      checked={size.includes("75")} 
       />&nbsp;      
       <label>75</label>
       </Box>
@@ -438,7 +340,7 @@ const Accordionfun = () => {
       <input type="checkbox" 
       value={"80"}
       onChange={handleChangeSizes}
-      checked={category.includes("80")} 
+      checked={size.includes("80")} 
       />&nbsp;      
       <label>80</label>
       </Box>
@@ -550,6 +452,104 @@ const Accordionfun = () => {
       checked={category.includes("Accessories")}
       />&nbsp;      
       <label>Accessories</label>
+      </Box>
+  </AccordionPanel>
+</AccordionItem>
+
+<AccordionItem>
+  <h2>
+    <AccordionButton>
+      <Box as="span" flex='1' textAlign='left'>
+       <Text fontSize={"18px"} p={"6px 0"}>Price</Text>
+      </Box>
+      <AccordionIcon />
+    </AccordionButton>
+  </h2>
+  <AccordionPanel pb={4}>
+      <Box >
+      <input type="checkbox"  
+      //  value={"Jacket"}
+      //  onChange={handleChange}
+      //  checked={category.includes("Jacket")}
+      />&nbsp;
+      <label >100 To 500</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>500 To 1000</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>1000 To 1500</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>1500 To 2000</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>2000 To 2500</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>2500 To 3000</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>3000 To 3500</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>3500 To 4000</label>
+      </Box>
+  </AccordionPanel>
+</AccordionItem>
+
+<AccordionItem>
+  <h2>
+    <AccordionButton>
+      <Box as="span" flex='1' textAlign='left'>
+       <Text fontSize={"18px"} p={"6px 0"}>Discounts</Text>
+      </Box>
+      <AccordionIcon />
+    </AccordionButton>
+  </h2>
+  <AccordionPanel pb={4}>
+      <Box >
+      <input type="checkbox"  />&nbsp;
+      <label >1% To 10%</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>10% To 20%</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>20% To 30%</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>30% To 40%</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>40% To 50%</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>50% To 60%</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>60% To 70%</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>70% To 80%</label>
+      </Box>
+      <Box>
+      <input type="checkbox" />&nbsp;      
+      <label>80% To 90%</label>
       </Box>
   </AccordionPanel>
 </AccordionItem>
