@@ -1,3 +1,4 @@
+import { Image } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
@@ -6,10 +7,11 @@ const [mainimage,setMainImage]=useState(image[0])
     // console.log(image)
   return (
     <DIV>
-    <div className='grid grid-fourcolumn'>
+    <div className='grid-fourcolumn'>
     {image.map((currImg,index)=>{
        
-        return  <figure><img key={index} src={currImg.url} alt='some name' onClick={()=>setMainImage(currImg)} /></figure>})
+        return  <figure><Image  objectFit="cover"
+              boxSize="100%" key={index} src={currImg.url} alt='some name' onClick={()=>setMainImage(currImg)} /></figure>})
     }
 
     </div>
@@ -23,5 +25,20 @@ const [mainimage,setMainImage]=useState(image[0])
 export default SinProductImg
 
 const DIV=styled.div`
-.grid-fourcolumn{width:50px}
+justify-content: center;
+align-items: center;
+
+.mainScreen{
+  position: relative;
+  width: 100%;
+}
+.mainScreen img{
+  objectFit: cover;
+}
+.grid-fourcolumn{
+  position: absolute;
+  display: grid;
+
+  z-index: 10;
+  width:100px}
 `
