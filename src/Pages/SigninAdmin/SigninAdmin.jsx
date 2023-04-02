@@ -19,14 +19,14 @@ function SigninAdmin() {
   const submitLogin = async () => {
     // console.log(load);
     try {
-      let res = await fetch(`http://localhost:8080/admin`);
+      let res = await fetch(`https://deployed-server-byloki.onrender.com/admin`);
       let data = await res.json();
       // console.log(data);
       let Auth = false;
       for (let i in data) {
         if (data[i].email === email && data[i].password === password) {
           Auth = true;
-          localStorage.setItem("adminAuth", data[i].name);
+          localStorage.setItem("adminAuth", 'abc');
           break;
         }
       }
@@ -35,7 +35,8 @@ function SigninAdmin() {
         alert("Please enter right email or password!");
       } else {
         alert("Login Successfull!");
-        navigate("/admin/dashboard");
+        navigate("/admin-dashboard");
+        localStorage.setItem("adminAuth", 'abc');
       }
 
       console.log(Auth);

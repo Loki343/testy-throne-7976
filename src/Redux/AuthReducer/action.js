@@ -14,6 +14,6 @@ export const addUserData =
       })
       .catch(() => {
         dispatch({ type: SIGNUP_ERROR });
-        emailExist();
+        // emailExist();
       });
   };

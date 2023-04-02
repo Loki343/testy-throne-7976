@@ -27,6 +27,7 @@ import Checkout from "../Components/AddToCart_Payment_Components/Chekout/Checkou
 
 import SingleProductPageWomen from "../Pages/SingleProductPageWomen";
 import SingleProductPageMen from "../Pages/SingleProductPageMen";
+import PrivateRouteAdmin from "../Components/PrivateRoute/PrivateRouteAdmin";
 
 
 const AllRoutes = () => {

@@ -12,7 +12,7 @@ const TotalOrder = ({ totalPrice }) => {
       alignItems={"center"}
       id="payDiv"
       width={"350px"}
-      border={'1px solid red'}
+      border={'1px solid red transparent'}
     >
       <Box
         w={"full"}

@@ -141,7 +141,7 @@ const WomenAdminProducts = () => {
 
           <Box>
             <Button onClick={onOpen} colorScheme="gray" variant="outline">
-              Add User
+              Add Women Product
             </Button>
           </Box>
         </Flex>
