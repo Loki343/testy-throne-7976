@@ -134,7 +134,7 @@ export default function Navbar() {
   return (
     <>
       <Navbar2 />
-      <Box position={"sticky"} top={"0px"} zIndex={"1000"}>
+      <Box position={"sticky"} top={"0px"} zIndex={"1000"} boxShadow={' rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;'} mb={'30px'}>
         <Flex
           // border={"1px solid"}
           bg={"white"}
@@ -1812,8 +1812,9 @@ const DesktopNav = () => {
               <Link
                 onClick={() => {
                   setQuery("");
+                  window.reload()
                 }}
-                // to={`/product/${item.id}`}
+                to={`/product/${item.id}`}
               >
                 <Text textAlign={"center"} color={"black"} cursor={"pointer"}>
                   {item.title}

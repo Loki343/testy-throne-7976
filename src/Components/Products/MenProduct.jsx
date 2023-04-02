@@ -12,6 +12,7 @@ import {
 import { useToast } from "@chakra-ui/react";
 import { addToCart } from "../../Redux/Products_Reducer/action";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 export const MenProduct = ({
   image,
@@ -45,9 +46,25 @@ export const MenProduct = ({
       position: "top",
     });
   };
+  const LoginFirst = () => {
+    toast({
+      title: "Please login",
+      description: "Login to add Product",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+  };
   const handleAddToCart = () => {
     const prod = { image, title, id, discount, label, price, price_c };
-    dispatch(addToCart(prod, addToCartSuccess, alreadyAdded));
+    if(localStorage.getItem('name')){
+      dispatch(addToCart(prod, addToCartSuccess, alreadyAdded));
+      window.location.reload()
+    }else{
+      LoginFirst()
+    }
+    
   };
   return (
     <Center>
@@ -83,12 +100,14 @@ export const MenProduct = ({
             },
           }}
         >
-          <Image
-            height={"100%"}
-            width={"100%"}
-            // objectFit={'cover'}
-            src={image}
-          />
+          <Link to={`/men-product/${id}`}>
+            <Image
+              height={"100%"}
+              width={"100%"}
+              cursor={"pointer"}
+              src={image}
+            />
+          </Link>
         </Box>
         <Stack pt={5} align={"center"}>
           {/* <Heading color={'gray.500'} fontSize={'xl'} textTransform={'uppercase'}>
