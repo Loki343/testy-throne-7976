@@ -10,11 +10,12 @@ import BackToTop from "./Components/BackToTop/BackToTop";
 function App() {
   return (
     <div className="App">
+
       
       <AllRoutes />
       <BackToTop/>
       
-    {/* <SingleProductPage/> */}
+
     </div>
   );
 }

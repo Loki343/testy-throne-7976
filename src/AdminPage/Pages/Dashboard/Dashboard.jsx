@@ -1,14 +1,22 @@
+import { Center, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
+import  "../../Navbar/Navbar.css"
+import SearchBar from '../../Navbar/SearchBar'
+import Navbar from '../../Navbar/Navbar'
 
-export default function Deshbord() {
+
+
+
+
+export default function Dashboard() {
     return (
-        <div >
-            <Heading position={'relative'} m='2.5' right='27.5%' fontSize={'x-large'}>Customer dashboard</Heading>
-            <div className='Daily-Record-Track'>
+        <div style={{border:"1px solid red transparent", paddingTop:"25px", marginLeft:"5%" }} >
+            <Heading color={"darkgray"} textAlign={"center"} fontSize={"40px"}>Customer dashboard</Heading>
+            <div style={{marginTop:"25px"}} className='Daily-Record-Track'>
                 <div>
                     <div className='sjdfks'>
-                        <Center>
-                            <Text mt='4' fontSize={'x-large'} fontWeight='bolder'>50</Text>
+                        <Center >
+                            <Text mt='4' fontSize={'x-large'} fontWeight='bolder'>55</Text>
                         </Center>
                         <Center>
                             <Text fontSize={'large'} mb='4' fontWeight='bolder'>Daily Sing-up</Text>
@@ -23,7 +31,7 @@ export default function Deshbord() {
                 <div>
                     <div className='sjdfks'>
                         <Center>
-                            <Text mt='4' fontSize={'x-large'} fontWeight='bolder'>50</Text>
+                            <Text mt='4' fontSize={'x-large'} fontWeight='bolder'>$ 780</Text>
                         </Center>
                         <Center>
                             <Text fontSize={'large'} mb='4' fontWeight='bolder'>Daily Revenue</Text>
@@ -38,7 +46,7 @@ export default function Deshbord() {
                 <div>
                     <div className='sjdfks'>
                         <Center>
-                            <Text mt='4' fontSize={'x-large'} fontWeight='bolder'>50</Text>
+                            <Text mt='4' fontSize={'x-large'} fontWeight='bolder'>62</Text>
                         </Center>
                         <Center>
                             <Text fontSize={'large'} mb='4' fontWeight='bolder'>Daily Order</Text>
@@ -60,5 +68,9 @@ export default function Deshbord() {
                 <div><Image src='https://i.stack.imgur.com/hiAZE.png' alt='Stactic-Overview' w='99%' ml='10' /></div>
             </div>
         </div>
+        // <>
+        // <SearchBar/>
+        // <Navbar/>
+        // </>
     )
 }
