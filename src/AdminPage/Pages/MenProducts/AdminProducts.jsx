@@ -1,5 +1,6 @@
 import React from "react";
-import ProductRow from "./ProductRow";
+import AdminProductRow from "./AdminProductRow";
+
 
 import { useEffect, useState } from "react";
 import {
@@ -121,6 +122,8 @@ export const AdminProducts = () => {
           alignItems={"center"}
           justifyContent={"space-between"}
           color={"black"}
+          marginLeft={"120px"}
+          marginTop={"30px"}
         >
           <Box>
             <Breadcrumb separator={<ChevronRightIcon color="gray.500" />}>
@@ -149,8 +152,9 @@ export const AdminProducts = () => {
           color={useColorModeValue("gray.300", "gray.700")}
           border="1px solid #999"
           width="100%"
+          marginLeft="100px"
         >
-          <Heading p="6">Product Database</Heading>
+          <Heading color={"darkgray"} textAlign={"center"} p="6">Men Product Database</Heading>
           <Divider />
           <Box
             flexDirection={"column"}
@@ -171,7 +175,7 @@ export const AdminProducts = () => {
               </Thead>
               <Tbody>
                 {products?.map((products, i) => (
-                  <ProductRow key={i} {...products} />
+                  <AdminProductRow key={i} {...products} />
                 ))}
               </Tbody>
             </Table>

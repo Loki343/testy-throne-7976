@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Input, Button } from '@chakra-ui/react'
 // import "../Navbar/Navbar.css"
-import "../Style/Navbar.css"
+import "./Navbar.css"
 export default function SearchBar() {
     return (
         <Container maxW='100%' mt='2'>

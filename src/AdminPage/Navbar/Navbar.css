@@ -1,13 +1,15 @@
 .Navbar-Container {
   display: flex;
   border: 1px solid black transparent;
-  margin: auto;
-  width: 96%;
+  /* margin: auto; */
+  width: 15%;
+  
 }
 .Navbar-Container > div:nth-child(1) {
   border: 1px solid black transparent;
-  height: fit-content;
-  width: 20%;
+  /* height: fit-content; */
+  margin: auto;
+  width: 100%;
 }
 
 .Navbar-Container > div:nth-child(2) {

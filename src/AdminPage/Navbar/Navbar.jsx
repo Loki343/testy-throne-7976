@@ -1,15 +1,15 @@
 import React from "react";
-import "../Style/Navbar.css"
+import "./Navbar.css"
 import { Box, Button, Center, Image } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
 // import RightSection from "../RightSection/RightSection";
 import UNICORN from "../../Assets/unicorn.png"
-import RightSection from "./Right_Section";
-export default function Navbar() {
+// import RightSection from "./Right_Section";
+export default function AdminNavbar() {
   return (
     <div className="Navbar-Container">
-      <div style={{marginTop:"20px", marginRight:"10px", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", paddingBottom:"20px"}}>
+      <div style={{  boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", paddingBottom:"20px" , marginTop:'15px', marginLeft:"9%"}}>
         <Center>
           <Box>
             <Image
@@ -25,32 +25,32 @@ export default function Navbar() {
           </Box>
         </Center>
         <Box>
-          <Link to={"/dashboard"}>
-            <Button style={{fontWeight:"bolder",backgroundColor:"black", color:"white", marginTop:"30px",marginBottom:"30px",height:"30px", width:"150px", height:"40px" }}>Dashboard</Button>
+          <Link to={"/admin-dashboard"}>
+            <Button style={{ marginLeft:"27px",fontWeight:"bolder",backgroundColor:"black", color:"white", marginTop:"30px",marginBottom:"30px",height:"30px", width:"150px", height:"40px" }}>Dashboard</Button>
           </Link>
           <br />
-          <Link to={"/User-Profile"}>
-            <Button style={{fontWeight:"bolder",backgroundColor:"black", color:"white", marginBottom:"30px",height:"30px", width:"150px", height:"40px" }}>User</Button>
+          <Link to={"/admin-user"}>
+            <Button style={{marginLeft:"27px",fontWeight:"bolder",backgroundColor:"black", color:"white", marginBottom:"30px",height:"30px", width:"150px", height:"40px" }}>User</Button>
           </Link>
           <br />
 
-          <Link to={"/products"}>
-            <Button style={{fontWeight:"bolder",backgroundColor:"black", color:"white", marginBottom:"30px",height:"30px", width:"150px", height:"40px" }}>Men Product</Button>
+          <Link to={"/admin-menproducts"}>
+            <Button style={{marginLeft:"27px",fontWeight:"bolder",backgroundColor:"black", color:"white", marginBottom:"30px",height:"30px", width:"150px", height:"40px" }}>Men Product</Button>
           </Link>
           <br />
-          <Link to={"/women-products"}>
-            <Button style={{fontWeight:"bolder",backgroundColor:"black", color:"white", marginBottom:"30px",height:"30px", width:"150px", height:"40px" }}>Women Product</Button>
+          <Link to={"/admin-womenproducts"}>
+            <Button style={{marginLeft:"27px",fontWeight:"bolder",backgroundColor:"black", color:"white", marginBottom:"30px",height:"30px", width:"150px", height:"40px" }}>Women Product</Button>
           </Link>
           <br />
-          <Link to={"/Admit-order"}>
-            <Button style={{fontWeight:"bolder",backgroundColor:"black", color:"white", margin:"5px",height:"40px", width:"150px"  }}>Order</Button>
+          <Link to={"/admin-order"}>
+            <Button style={{marginLeft:"27px",fontWeight:"bolder",backgroundColor:"black", color:"white",marginBottom:"30px", height:"40px", width:"150px"  }}>Order</Button>
           </Link>
           <br />
         </Box>
       </div>
-      <div>
+      {/* <div>
         <RightSection />
-      </div>
+      </div> */}
     </div>
   );
 }

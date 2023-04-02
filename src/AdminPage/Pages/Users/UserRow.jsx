@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   HStack,
   Box,
@@ -52,7 +53,7 @@ const UserRow = ({
     setEdit(false);
     setLoading(true);
     try {
-      axios.delete(`http://localhost:8080/users/${id}`);
+      axios.delete(`https://deployed-server-byloki.onrender.com/user/${id}`);
       setLoading(false);
       toast({
         title: "User is being Deleted.",
@@ -72,7 +73,7 @@ const UserRow = ({
   };
   const saveHandler = () => {
     try {
-      axios.patch(`http://localhost:8080/users/${id}`, {
+      axios.patch(`https://deployed-server-byloki.onrender.com/user/${id}`, {
         name: username,
         email: useremail,
         password: userpassword,
@@ -178,7 +179,7 @@ const UserRow = ({
           <Td>{mobile}</Td>
           <Td>{password}</Td>
           <Td>{gender}</Td>
-          <Td>{orders.length}</Td>
+          <Td>1</Td>
           <Td p={2}>
             <Select size={"md"} placeholder="Actions">
               <option onClick={editHandler} value="edit">

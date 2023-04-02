@@ -22,14 +22,14 @@ import {
   
     useEffect(() => {
       axios
-        .get(`http://localhost:8080/orders`)
+        .get(`https://deployed-server-byloki.onrender.com/orders`)
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
     }, []);
   
     const handleStatus = (val, id, pname, img, cname, cid, quan, price) => {
       axios
-        .put(`http://localhost:8080/orders/${id}`, {
+        .put(`https://deployed-server-byloki.onrender.com/orders/${id}`, {
           status: val,
           id: id,
           pname: pname,
@@ -63,9 +63,10 @@ import {
           bg={useColorModeValue("white.300", "white.700")}
           color={useColorModeValue("gray.300", "gray.700")}
           border="1px solid #999"
-          width="100%"
+          width="90%"
+          marginLeft={"55px"}
         >
-          <Heading p="6">Order Database</Heading>
+          <Heading color={"darkgray"} textAlign={"center"}  p="6">Order Database</Heading>
           <Divider />
           <Box
             flexDirection={"column"}
@@ -73,6 +74,7 @@ import {
             gap={"10"}
             color={"white"}
             w={"100%"}
+            
           >
             <Table>
               <Thead>

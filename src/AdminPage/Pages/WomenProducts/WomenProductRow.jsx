@@ -40,7 +40,7 @@ const toast=useToast();
           </Box>
         </Td>
         <Td>{category}</Td>
-        <Td>{price}</Td>
+        <Td>$ {price}</Td>
         {/* <Td>{`₹ ${price.slice(2, price.length)}`}</Td> */}
         <Td>{title}</Td>
         <Td ><Menu>
@@ -48,8 +48,8 @@ const toast=useToast();
     Actions
   </MenuButton>
   <MenuList>
-    <MenuItem color={"white"} _hover={{bg:'#5D68A1'}}>Edit Product</MenuItem>
-    <MenuItem color={"white"} _hover={{bg:'#5D68A1'}} onClick={handleDelete} >Delete Product</MenuItem>
+    <MenuItem color={"black"} _hover={{bg:'#5D68A1'}}>Edit Product</MenuItem>
+    <MenuItem color={"black"} _hover={{bg:'#5D68A1'}} onClick={handleDelete} >Delete Product</MenuItem>
     
   </MenuList>
 </Menu></Td>

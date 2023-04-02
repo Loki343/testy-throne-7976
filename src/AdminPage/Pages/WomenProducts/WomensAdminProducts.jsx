@@ -1,7 +1,7 @@
 
 import React from "react";
 // import ProductRow from "./ProductRow";
-import WomenProductRow from "../WomenProducts/WomenProductRow"
+
 
 import { useEffect, useState } from "react";
 import {
@@ -124,6 +124,8 @@ const WomenAdminProducts = () => {
           alignItems={"center"}
           justifyContent={"space-between"}
           color={"black"}
+          marginLeft="120px"
+          marginTop="30px"
         >
           <Box>
             <Breadcrumb separator={<ChevronRightIcon color="gray.500" />}>
@@ -152,8 +154,9 @@ const WomenAdminProducts = () => {
           color={useColorModeValue("gray.300", "gray.700")}
           border="1px solid #999"
           width="100%"
+          marginLeft="100px"
         >
-          <Heading p="6">Product Database</Heading>
+          <Heading  textAlign={"center"} color={"darkgray"} p="6"> Women Product Database</Heading>
           <Divider />
           <Box
             flexDirection={"column"}

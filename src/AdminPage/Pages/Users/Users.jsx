@@ -35,7 +35,7 @@ import {
 import React, { useEffect, useState } from "react";
 import UserRow from "./UserRow";
 const getTopProducts = async () => {
-  let res = await axios.get("http://localhost:8080/users");
+  let res = await axios.get("https://deployed-server-byloki.onrender.com/user");
   let data = await res.data;
   return data;
 };
@@ -60,7 +60,7 @@ const Users = () => {
   };
   const handleSubmit = () => {
     try {
-      axios.post("http://localhost:8080/users", userDetails);
+      axios.post("https://deployed-server-byloki.onrender.com/user", userDetails);
       setUserDetails({
         name: "",
         email: "",
@@ -94,7 +94,7 @@ const Users = () => {
     <>
       <Box>
         {/* <Heading my={"6"}>Users</Heading> */}
-        <Flex alignItems={"center"} justifyContent={"space-between"}>
+        <Flex marginTop={"30px"} marginLeft={"90px"} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
             <Breadcrumb separator={<ChevronRightIcon color="gray.500" />}>
               <BreadcrumbItem>
@@ -123,8 +123,9 @@ const Users = () => {
           color={useColorModeValue("gray.300", "gray.700")}
           border="1px solid #999"
           width="100%"
+          marginLeft={"70px"}
         >
-          <Heading p="6">User Database</Heading>
+          <Heading color={"darkgray"} textAlign={"center"} p="6">User Database</Heading>
           <Divider />
           <Box
             flexDirection={"column"}
@@ -148,7 +149,7 @@ const Users = () => {
                 </Tr>
               </Thead>
               <Tbody>
-                {users?.map((user, i) => (
+                {users.length > 0 && users.map((user, i) => (
                   <UserRow key={i} {...user} />
                 ))}
               </Tbody>

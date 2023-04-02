@@ -9,7 +9,7 @@ import {  Td, Tr, Image, Box, Button,
 import axios from 'axios';
  import {ChevronDownIcon} from "@chakra-ui/icons";
 
-const ProductRow =({image, name, title, price ,id, category})=> {
+const AdminProductRow =({image, name, title, price ,id, category})=> {
 const toast=useToast();
  
   const handleDelete = () => {
@@ -39,7 +39,7 @@ const toast=useToast();
           </Box>
         </Td>
         <Td>{category}</Td>
-        <Td>{price}</Td>
+        <Td>$ {price}</Td>
         {/* <Td>{`₹ ${price.slice(2, price.length)}`}</Td> */}
         <Td>{title}</Td>
         <Td ><Menu>
@@ -47,8 +47,8 @@ const toast=useToast();
     Actions
   </MenuButton>
   <MenuList>
-    <MenuItem color={"white"} _hover={{bg:'#5D68A1'}}>Edit Product</MenuItem>
-    <MenuItem color={"white"} _hover={{bg:'#5D68A1'}} onClick={handleDelete} >Delete Product</MenuItem>
+    <MenuItem color={"black"} _hover={{bg:'#5D68A1'}}>Edit Product</MenuItem>
+    <MenuItem color={"black"} _hover={{bg:'#5D68A1'}} onClick={handleDelete} >Delete Product</MenuItem>
     
   </MenuList>
 </Menu></Td>
@@ -57,4 +57,4 @@ const toast=useToast();
   );
 }
 
-export default ProductRow;
+export default AdminProductRow;
