@@ -31,20 +31,52 @@ import Navbar2 from "./Navbar2";
 import ButtonLogout from "./ButtonLogout";
 import { useToast } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import img from "../../Assets/unicorn.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartProducts } from "../../Redux/Products_Reducer/action";
 
 const NAV_ITEMS = [
+  {
+    label: "WOMEN",
+    href: "/women-product",
+  },
+  {
+    label: "MEN",
+    href: "/men-product",
+  },
+  {
+    label: "CHILDREN",
+    href: "/",
+  },
+  {
+    label: "GIFTS",
+    href: "/",
+  },
+  {
+    label: "NEW",
+    href: "/",
+  },
+
+  {
+    label: "COAT",
+    href: "/",
+  },
+  {
+    label: "BAGS",
+    href: "/",
+  },
   {
     label: "CATEGORIES",
     children: [
       {
         label: "Women",
         subLabel: "Explore our wide range of women's collection",
-        href: "/",
+        href: "/women-product",
       },
       {
         label: "Men",
         subLabel: "Explore our wide range of men's collection",
-        href: "/",
+        href: "/men-product",
       },
       {
         label: "Children",
@@ -73,41 +105,21 @@ const NAV_ITEMS = [
       },
     ],
   },
-  {
-    label: "WOMEN",
-    href: "/",
-  },
-  {
-    label: "MEN",
-    href: "/",
-  },
-  {
-    label: "CHILDREN",
-    href: "/",
-  },
-  {
-    label: "GIFTS",
-    href: "/",
-  },
-  {
-    label: "NEW",
-    href: "/",
-  },
-
-  {
-    label: "COAT",
-    href: "/",
-  },
-  {
-    label: "BAGS",
-    href: "/",
-  },
 ];
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const toast = useToast();
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getCartProducts());
+  }, []);
+
+  const cart = useSelector((store) => {
+    return store.ProReducer.cart;
+  });
+  // console.log(cart);
   const logoutSuccess = () => {
     toast({
       title: "Logout Successful.",
@@ -157,7 +169,13 @@ export default function Navbar() {
               color={useColorModeValue("gray.800", "white")}
             >
               <Link to={"/"}>
-                <Flex className={styles.logoname}>UNICORN</Flex>
+                <img
+                  src={img}
+                  alt="img"
+                  width={"50px"}
+                  style={{ borderRadius: "30%" }}
+                />
+                {/* <Flex className={styles.logoname}>UNICORN</Flex> */}
               </Link>
             </Text>
 
@@ -184,12 +202,14 @@ export default function Navbar() {
                 >
                   <BsFillBagCheckFill />
                   <Tooltip
-                    label={`You have 0 items in the cart`}
+                    label={`You have ${cart.length || 0} items in the cart`}
                     fontSize="md"
                     background="lightgrey"
                     color={"black"}
                   >
-                    <span style={{ marginLeft: "4px" }}>Cart : 0</span>
+                    <span style={{ marginLeft: "4px" }}>
+                      Cart : {cart.length || 0}
+                    </span>
                   </Tooltip>
                 </Button>
 
@@ -1774,16 +1794,18 @@ const DesktopNav = () => {
       )}
       {suggation.length > 0 && (
         <Box
-          border={"1px solid"}
+          border={"1px solid black transparent"}
           maxH={"200px"}
           position={"absolute"}
           w={"30%"}
-          left={"55.9%"}
-          top={"64px"}
+          left={"37%"}
+          top={"69px"}
           zIndex={"10"}
-          bg={"black"}
+          bg={"lightgray"}
           borderRadius={"5px"}
           overflow={"hidden scroll"}
+          opacity={".9"}
+          padding={"10px"}
         >
           {suggation.map((item) => {
             return (
@@ -1793,7 +1815,7 @@ const DesktopNav = () => {
                 }}
                 // to={`/product/${item.id}`}
               >
-                <Text color={"whiteAlpha.700"} cursor={"pointer"}>
+                <Text textAlign={"center"} color={"black"} cursor={"pointer"}>
                   {item.title}
                 </Text>
               </Link>

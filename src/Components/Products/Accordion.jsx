@@ -109,6 +109,14 @@ const Accordionfun = () => {
           />&nbsp;
       <label>High To Low Price</label>
       </Box>
+      <Box>
+      <input type="checkbox" 
+          value={""}
+          name="order"
+          checked={order===""} 
+          />&nbsp;
+      <label>RESET</label>
+      </Box>
       </div>
   </AccordionPanel>
 </AccordionItem>

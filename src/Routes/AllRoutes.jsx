@@ -5,8 +5,8 @@ import { MenProductPage } from "../Pages/MenProductPage";
 import Signin from "../Pages/Signin/Signin";
 import Signup from "../Pages/Signup/Signup";
 import WomenProductPage from "../Pages/WomenProductPage";
-import SingleProductPage from "../Pages/Product_to_Payment/SingleProductPage";
-import CartPage from "../Pages/Product_to_Payment/CartPage";
+// import SingleProductPage from "../Pages/Product_to_Payment/SingleProductPage";
+// import CartPage from "../Pages/Product_to_Payment/CartPage";
 import Error from "../Components/Products/Error";
 
 import Dashboard from "../AdminPage/Pages/Dashboard/Dashboard";
@@ -24,7 +24,6 @@ import Footer from "../Components/Footer/Footer";
 import SigninAdmin from "../Pages/SigninAdmin/SigninAdmin";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import Pagination from "../Components/Products/Pagination";
-
 
 const AllRoutes = () => {
   return (
@@ -66,43 +65,39 @@ const AllRoutes = () => {
           </>
         }
       />
-
-      {/* <Route
-        path="/men"
+      <Route
+        path="/men-product"
         element={
           <>
-            <PrivateRoute>
-              <Navbar />
-              <h1>Men Page</h1>
-              <Footer />
-            </PrivateRoute>
+            <Navbar />
+            <MenProductPage />
+            <Pagination />
+            <Footer />
           </>
         }
-      /> */}
-      <Route path="/men-product" 
-       element={
-        <>
-        <MenProductPage /> 
-        <Pagination />
-        </>
-      } />
-      <Route path="/men-product:id" element={<SingleProductPage />} />
-      <Route path="/women-product" element={<><WomenProductPage /><Pagination /> </>} />
-      <Route path="/women-product:id" element={<SingleProductPage />} />
-      <Route path="/cart" element={<CartPage />} />
+      />
+      <Route
+        path="/women-product"
+        element={
+          <>
+            <Navbar />
+            <WomenProductPage />
+            <Pagination />
+            <Footer />{" "}
+          </>
+        }
+      />
+        {/* <Route path="/men-product:id" element={<SingleProductPage />} />
+      <Route path="/women-product:id" element={<SingleProductPage />} /> */}
+      {/* <Route path="/cart" element={<CartPage />} /> */}
       <Route path="*" element={<Error />} />
 
-
       {/* Admin routes */}
-      <Route path="/admin-dashboard" element={<RealDashboard/>} />
-      <Route path="/admin-menproducts" element={<RealAdminProducts/>} />
-      <Route path="/admin-womenproducts" element={<RealAdminWomen/>} />
+      <Route path="/admin-dashboard" element={<RealDashboard />} />
+      <Route path="/admin-menproducts" element={<RealAdminProducts />} />
+      <Route path="/admin-womenproducts" element={<RealAdminWomen />} />
       <Route path="/admin-user" element={<RealAdminUser />} />
       <Route path="/admin-order" element={<RealAdminOrder />} />
-      
-
-
-
     </Routes>
   );
 };
