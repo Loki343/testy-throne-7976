@@ -7,13 +7,13 @@
 
 - Kausik Bhaumik (My Linkedin profile :- https://www.linkedin.com/in/kausik-bhaumik-617179229/)
 
-- Tanmoy Roy (My Linkedin profile :- )
+- Tanmoy Roy (My Linkedin profile :- https://www.linkedin.com/in/tanmoy-roy-b28411209/)
 
 - prashant sathawane (My Linkedin profile :- https://www.linkedin.com/in/prashant-sathawane-b28411209/)
 
-- Suraj Yadav (My Linkedin profile :- https://www.linkedin.com/in/deepak-kumar-fathkar-b1678b13b/)
+- Suraj Yadav (My Linkedin profile :- https://www.linkedin.com/in/suraj-yadav-b1678b13b/)
 
-- Suraj (My Linkedin profile :- https://www.linkedin.com/in/nikita-sonwane/)
+- Suraj (My Linkedin profile :- https://www.linkedin.com/in/suraj-b1678b13b/)
 <br/>
 
 <h4 align="center">💻 Tech Stack</h4>
@@ -42,54 +42,57 @@
 ## Let's Dive into What we have made
 
 ## HomePage :
-![HomePage](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/home_gift_cards.png)
+![image](https://user-images.githubusercontent.com/106387298/229422717-abaf51c5-89c0-48ec-b573-c592f0bf4ac9.png)
 <br/>
 
-![HomePage_Products](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/Home_products.png)
+![image](https://user-images.githubusercontent.com/106387298/229422930-fe27dfeb-c3a3-4c17-93a6-c437f273c026.png)
 <br/>
-![HomePage_footer](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/footer_section.png?raw=true)
+
+![image](https://user-images.githubusercontent.com/106387298/229423013-71fe6a2b-42bf-4f2b-b89c-d1518c6fb6f4.png)
+<br/>
+
+![image](https://user-images.githubusercontent.com/106387298/229423119-2e5a14c0-e70b-4a9b-83c2-18bc9e9a6f8a.png)
 <br/>
 ## Signup Page: 
-![SignUp](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/signup.png?raw=true)
+![image](https://user-images.githubusercontent.com/106387298/229423203-1c87dc49-f254-4ba1-aa4e-6f54c42ac889.png)
 <br/>
 
-## Login Page:
+## Signin Page:
 
-![Login_Page](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/login.jpg?raw=true)
+![image](https://user-images.githubusercontent.com/106387298/229423270-ac958faf-9328-40eb-84fd-6580404f58a4.png)
 <br/>
 
-## GiftCards Page:
-![GiftCards](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/gift_cards.png?raw=true)
+## Women Page:
+![image](https://user-images.githubusercontent.com/106387298/229423404-ea301d93-4aca-4559-9dfa-5409b34cee1f.png)
 <br/>
 
-## Products Page:
-
-![ProductsPage](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/Products%20list.png?raw=true)
+## Men Page:
+![image](https://user-images.githubusercontent.com/106387298/229423459-7a50eea5-11d3-4bdf-a6f0-10ea4f59f8f5.png)
 <br/>
 
 ## Cart Page:
-
-![ProductsPage](https://github.com/shivshankar0965/indiwebmall/blob/main/screenshots/indiwebmall/cart%20page.png?raw=true)
+![image](https://user-images.githubusercontent.com/106387298/229423643-5feced09-9b0e-4f4f-8263-708b71ea8bd9.png)
 <br/>
 
-## Shipping Page:
-
-![ProductsPage](https://github.com/shivshankar0965/indiwebmall/blob/main/screenshots/indiwebmall/shipping_cart.png?raw=true)
+## Checkout Page:
+![image](https://user-images.githubusercontent.com/106387298/229423717-343d6f31-3ddd-4893-8378-fcf23ac2c81f.png)
 <br/>
+
 ## Admin Section:
 
-![AdminDashboard](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/admin_dashboard1.png?raw=true);
+![image](https://user-images.githubusercontent.com/106387298/229423901-53b41bde-f247-4442-9e2b-4c093a1d0402.png)
 <br/>
 
-![AdminDashboardSecond](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/admin_dashboard.png?raw=true);
+![image](https://user-images.githubusercontent.com/106387298/229423985-1ba4fe14-2a11-48d6-8c95-52def3a834a4.png)
 
 <br/>
-
-![AdminUsers](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/admin_users.png?raw=true)
+![image](https://user-images.githubusercontent.com/106387298/229424021-47925d6e-8cd8-4a21-8f4a-8e8378d9e511.png)
+<br/>
+![image](https://user-images.githubusercontent.com/106387298/229424071-654d62aa-74be-4114-a8ea-124c2fb1298b.png)
+<br/>
+![image](https://user-images.githubusercontent.com/106387298/229424144-673f145d-1d50-496b-997b-3993f820216e.png)
 <br/>
 
-![AdminProducts](https://github.com/shivshankar0965/general-protest-6773/blob/main/screenshots/indiwebmall/admin_products%20(2).png?raw=true)
-<br/>
 ## Our Learnings
 On this journey we faced many issues, but we keep motivated each other with patience. 
 
