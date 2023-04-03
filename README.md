@@ -11,7 +11,7 @@
 
 - prashant sathawane (My Linkedin profile :- https://www.linkedin.com/in/prashant-sathawane-b28411209/)
 
-- Suraj Yadav (My Linkedin profile :- https://www.linkedin.com/in/suraj-yadav-b1678b13b/)
+- Suraj Yadav (My Linkedin profile :- https://www.linkedin.com/in/suraj-yadav-003626236/)
 
 - Suraj (My Linkedin profile :- https://www.linkedin.com/in/suraj-b1678b13b/)
 <br/>
