@@ -1,4 +1,4 @@
-# Welcome to UNICORN
+# Welcome to UNICORN (BluBerry Clone)
 <h3>UNICORN is a American ecommerce website where we can buy different categories of products, the principle that clothing should be designed to protect people from the British weather.</h3>
 
 ## [Deployed URL](https://testy-throne-7976.vercel.app/)
