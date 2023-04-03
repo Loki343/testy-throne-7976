@@ -1,7 +1,7 @@
 # Welcome to BlueBerry
 <h3>BlueBerry is a American ecommerce website where we can buy different categories of products, the principle that clothing should be designed to protect people from the British weather.</h3>
 
-## [Deployed URL]( )
+## [Deployed URL](https://testy-throne-7976.vercel.app/)
 
 ## Our Team Members
 
@@ -9,11 +9,11 @@
 
 - Tanmoy Roy (My Linkedin profile :- )
 
-- Prashant  (My Linkedin profile :- https://www.linkedin.com/in/prashant-sathawane-b28411209/)
+- prashant sathawane (My Linkedin profile :- https://www.linkedin.com/in/prashant-sathawane-b28411209/)
 
-- Deepak Kumar Fathkar (My Linkedin profile :- https://www.linkedin.com/in/deepak-kumar-fathkar-b1678b13b/)
+- Suraj Yadav (My Linkedin profile :- https://www.linkedin.com/in/deepak-kumar-fathkar-b1678b13b/)
 
-- Nikita Hiralal Sonwane (My Linkedin profile :- https://www.linkedin.com/in/nikita-sonwane/)
+- Suraj (My Linkedin profile :- https://www.linkedin.com/in/nikita-sonwane/)
 <br/>
 
 <h4 align="center">💻 Tech Stack</h4>
