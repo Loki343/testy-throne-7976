@@ -8,6 +8,9 @@ import styles from "./HomePage.module.css";
 const HomePage = () => {
   return (
     <div>
+      <p className={styles.categoryHeading}>
+        Look at our world wide fashion-shows
+      </p>
       <Carousel />
       <div className={styles.imageContain}>
         <div style={{ width: "50%" }}>
@@ -31,8 +34,7 @@ const HomePage = () => {
           </p>
         </div>
       </div>
-      
-      
+
       <div className={styles.imageContain}>
         <div style={{ width: "50%" }}>
           <Image
@@ -64,7 +66,6 @@ const HomePage = () => {
       <p className={styles.heritage}>
         <Link to="/">These all are our exclusive HERITAGE collection</Link>
       </p>
-      
     </div>
   );
 };

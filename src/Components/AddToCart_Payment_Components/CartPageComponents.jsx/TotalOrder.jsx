@@ -22,7 +22,7 @@ const TotalOrder = ({ totalPrice }) => {
         lineHeight={"30px"}
         bgColor={"#f5f5f5"}
         className="offer-code"
-        border={'1px solid red'}
+        border={'1px solid red transparent'}
       >
         <b>OFFER CODE</b>
         <hr />
