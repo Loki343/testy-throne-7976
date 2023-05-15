@@ -124,7 +124,7 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            required
+            required 
             id="country"
             name="country"
             label="Country"
@@ -150,7 +150,7 @@ export default function AddressForm() {
 
         <Grid item xs={12} sm={6}>
           <TextField
-            required
+            required 
             id="email"
             name="email"
             label="Email address"
