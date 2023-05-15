@@ -1,23 +1,20 @@
 {
   "cart": [
     {
-      "image": "https://assets.burberry.com/is/image/Burberryltd/9D71914D-BC2E-4CC3-8D7B-03E737742992?$BBY_V2_SL_3x4$&wid=1278&hei=1700",
-      "title": "Check Nylon Hooded Jacket",
-      "id": 21,
-      "discount": 10,
-      "label": "New in",
-      "price": 1350,
-      "price_c": 1499,
+      "image": "https://assets.burberry.com/is/image/Burberryltd/93FB0DD4-CC1E-4F10-8A59-975E389BA547?$BBY_V2_SL_1x1$&wid=1251&hei=1251",
+      "title": "Soho Heritage Harrington Jacket",
+      "id": 1,
+      "discount": 24,
+      "label": "RELAXED FIT",
+      "price": 1890,
+      "price_c": 2490,
       "quantity": 1
     },
     {
-      "image": "https://assets.burberry.com/is/image/Burberryltd/19E899B3-0802-4D7E-9E1D-2E6DD93FAABB?$BBY_V2_SL_3x4$&wid=1278&hei=1700",
-      "title": "Nylon Lightweight Hooded Jacket",
-      "id": 22,
-      "discount": 16,
-      "label": "Lightweight",
-      "price": 1250,
-      "price_c": 1499,
+      "image": "https://assets.burberry.com/is/image/Burberryltd/A80B9959-1F32-4920-8419-F028387AB474?$BBY_V2_SL_3x4$&wid=400&hei=534",
+      "title": "Check Wool Cotton Oversized Overshirt",
+      "id": 5,
+      "price": 1550,
       "quantity": 1
     }
   ]
