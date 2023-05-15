@@ -16,6 +16,15 @@
 - Suraj (My Linkedin profile :- https://www.linkedin.com/in/suraj-b1678b13b/)
 <br/>
 
+## How to login in our website
+1. At first click on signup and fill all the required fields and click on signup button to create your user-id.
+2. To signin into the website fill your email and password as per your signup data.
+
+## How to login at Admin Sight
+Email - unicornadmin@gmail.com <br/>
+Password - admin1234
+<br/>
+
 <h4 align="center">💻 Tech Stack</h4>
  <div align="center">
  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" align="center" alt="html5">
@@ -98,14 +107,6 @@
 ![image](https://user-images.githubusercontent.com/106387298/229424144-673f145d-1d50-496b-997b-3993f820216e.png)
 
 <br/>
-
-## How to login in our website
-1. At first click on signup and fill all the required fields and click on signup button to create your user-id.
-2. To signin into the website fill your email and password as per your signup data.
-
-## How to login at Admin Sight
-Email - unicornadmin@gmail.com <br/>
-Password - admin1234
 
 ## Our Learnings
 On this journey we faced many issues, but we keep motivated each other with patience. 
