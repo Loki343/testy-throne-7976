@@ -104,7 +104,7 @@
 2. To signin into the website fill your email and password as per your signup data.
 
 ## How to login at Admin Sight
-Email - unicornadmin@gmail.com
+Email - unicornadmin@gmail.com <br/>
 Password - admin1234
 
 ## Our Learnings
