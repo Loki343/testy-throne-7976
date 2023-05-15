@@ -26,12 +26,7 @@ import { addToCart } from "../Redux/Products_Reducer/action";
 
 
 
-export default function SingleProductPageMen({ image,
-  title,
-  discount,
-  label,
-  price,
-  price_c,}) {
+export default function SingleProductPageMen() {
   const dispatch = useDispatch();
   const toast = useToast();
   const [data, setData] = useState({});
@@ -49,6 +44,7 @@ console.log(id);
       setData(res);
     });
   }, []);
+console.log(data)
 
   const addToCartSuccess = () => {
     toast({
@@ -83,7 +79,7 @@ console.log(id);
 
 
   const handleAddToCart = () => {
-    const prod = { image, title, id, discount, label, price, price_c ,quantity:1};
+    const prod = { image:data.image, title:data.title, id:data.id, price:data.price,quantity:1};
     if (localStorage.getItem("name")) {
       dispatch(addToCart(prod, addToCartSuccess, alreadyAdded));
       window.location.reload()
