@@ -36,6 +36,7 @@ export const WomenProduct = ({
       position: "top",
     });
   };
+  
   const alreadyAdded = () => {
     toast({
       title: "Already Added in Cart",
@@ -46,6 +47,7 @@ export const WomenProduct = ({
       position: "top",
     });
   };
+
   const LoginFirst = () => {
     toast({
       title: "Please login",
@@ -56,6 +58,7 @@ export const WomenProduct = ({
       position: "top",
     });
   };
+
   const handleAddToCart = () => {
     const prod = { image, title, id, discount, label, price, price_c ,quantity:1};
     if (localStorage.getItem("name")) {

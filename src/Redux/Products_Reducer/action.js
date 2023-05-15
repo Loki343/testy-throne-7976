@@ -39,39 +39,46 @@ export const getWoMenProducts = (Obj) => (dispatch) => {
     });
 };
 
-export const addToCart = (obj, toast, toast2) => (dispatch) => {
-  dispatch({ type: PRODUCTS_REQUEST });
-  axios
-    .post("http://localhost:8080/cart", obj)
-    .then((res) => {
-      dispatch({ type: ADD_TO_CART_SUCCESS, payload: res.data });
-      toast();
-    })
-    .catch(() => {
-      dispatch({ type: PRODUCTS_FAILURE });
-      toast2();
-    });
-};
+export const getCart = async ()=> {
+  let res = await axios.get(`http://localhost:8080/cart`)
+  let data = res.data
+  return data
+}
 
-//Pagination
-export const handlePageChange = (newPage) => {
-  return { type: HANDLE_PAGE_CHANGE, payload: newPage };
-};
 
-// API Call For single Product Call
+export const addtoCartApi = async (data)=>{
+    let res = await axios.post(`http://localhost:8080/cart`,data)
+}
 
-export const getSingleProduct = (id) => (dispatch) => {
-  dispatch({ type: PRODUCTS_REQUEST });
 
-  axios
-    .get(`${URL}/men/${id}`)
-    .then((res) => {
-      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: res.data });
-    })
-    .catch(() => {
-      dispatch({ type: PRODUCTS_FAILURE });
-    });
-};
+// cart post request
+export const addToCart = (data,toast,toast2)=>async (dispatch)=>{
+  dispatch({type:PRODUCTS_REQUEST})
+  try {
+      let res = await addtoCartApi(data)
+      let getData = await getCart()
+      console.log(data)
+      dispatch({type:ADD_TO_CART_SUCCESS,payload:getData})
+      toast()
+  } catch {
+      dispatch({type:PRODUCTS_FAILURE})
+      toast2()
+  }
+}
+
+// export const addToCart = (id,obj, toast, toast2) => (dispatch) => {
+//   dispatch({ type: PRODUCTS_REQUEST });
+//   axios
+//     .post(`http://localhost:8080/cart/${id}`, obj)
+//     .then(() => {
+//       dispatch({ type: ADD_TO_CART_SUCCESS});
+//       toast();
+//     })
+//     .catch(() => {
+//       dispatch({ type: PRODUCTS_FAILURE });
+//       toast2();
+//     });
+// };
 
 export const getCartProducts = () => (dispatch) => {
   dispatch({ type: PRODUCTS_REQUEST });
@@ -94,6 +101,31 @@ export const updateCartProduct = (id, updateData) => (dispatch) => {
       dispatch({ type: PRODUCTS_FAILURE });
     });
 }
+
+
+//Pagination
+export const handlePageChange = (newPage) => {
+  return { type: HANDLE_PAGE_CHANGE, payload: newPage };
+};
+
+// API Call For single Product Call
+
+export const getSingleProduct = (id) => (dispatch) => {
+  dispatch({ type: PRODUCTS_REQUEST });
+
+  axios
+    .get(`${URL}/men/${id}`)
+    .then((res) => {
+      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: res.data });
+    })
+    .catch(() => {
+      dispatch({ type: PRODUCTS_FAILURE });
+    });
+};
+
+
+
+
 
 export const removeCartdata = (id) => (dispatch) => {
   dispatch({ type: PRODUCTS_REQUEST });

@@ -24,6 +24,7 @@ import { MdDelete } from "react-icons/md";
 import { DeleteIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 const CartPage = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((store) => store.ProReducer);
@@ -38,11 +39,11 @@ const CartPage = () => {
     });
   };
 
-  //   const handleUpdate = (id, updateData) => {
-  //     dispatch(updateCartProduct(id, updateData)).then(() => {
-  //       getCartProducts();
-  //     });
-  //   };
+    const handleUpdate = (id, updateData) => {
+      dispatch(updateCartProduct(id, updateData)).then(() => {
+        getCartProducts();
+      });
+    };
 
   const totalPrice = cart.reduce((acc, product) => {
     return acc + product.price * product.quantity;
