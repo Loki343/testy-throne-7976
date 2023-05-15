@@ -15,16 +15,70 @@ import {
   VisuallyHidden,
   List,
   ListItem,
+  useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addToCart } from "../Redux/Products_Reducer/action";
 
-export default function SingleProductPageWomen() {
+export default function SingleProductPageWomen({ image,
+  title,
+  discount,
+  label,
+  price,
+  price_c,}) {
   const [data, setData] = useState({});
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const toast = useToast();
+
+
+  const addToCartSuccess = () => {
+    toast({
+      title: "Added Successful.",
+      description: "Your product is added",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+  
+  const alreadyAdded = () => {
+    toast({
+      title: "Already Added in Cart",
+      description: "Your product is already added",
+      status: "warning",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
+  const LoginFirst = () => {
+    toast({
+      title: "Please login",
+      description: "Login to add Product",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
+  const handleAddToCart = () => {
+    const prod = { image, title, id, discount, label, price, price_c ,quantity:1};
+    if (localStorage.getItem("name")) {
+      dispatch(addToCart(prod, addToCartSuccess, alreadyAdded));
+      window.location.reload()
+    } else {
+      LoginFirst();
+    }
+  };
 
   const getDetails = async () => {
     let res = await axios.get(
@@ -172,6 +226,7 @@ export default function SingleProductPageWomen() {
               transform: "translateY(2px)",
               boxShadow: "lg",
             }}
+            onClick={handleAddToCart}
           >
             Add to cart
           </Button>

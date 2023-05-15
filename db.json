@@ -1,13 +1,23 @@
 {
   "cart": [
     {
-      "image": "https://assets.burberry.com/is/image/Burberryltd/437964D3-3FBB-4030-847A-3970ADB0ED41?$BBY_V2_SL_3x4$&wid=400&hei=534",
-      "title": "Small Lola Bag",
-      "id": 38,
-      "discount": 14,
-      "label": "COMING SOON",
-      "price": 3850,
-      "price_c": 4490,
+      "image": "https://assets.burberry.com/is/image/Burberryltd/9D71914D-BC2E-4CC3-8D7B-03E737742992?$BBY_V2_SL_3x4$&wid=1278&hei=1700",
+      "title": "Check Nylon Hooded Jacket",
+      "id": 21,
+      "discount": 10,
+      "label": "New in",
+      "price": 1350,
+      "price_c": 1499,
+      "quantity": 1
+    },
+    {
+      "image": "https://assets.burberry.com/is/image/Burberryltd/19E899B3-0802-4D7E-9E1D-2E6DD93FAABB?$BBY_V2_SL_3x4$&wid=1278&hei=1700",
+      "title": "Nylon Lightweight Hooded Jacket",
+      "id": 22,
+      "discount": 16,
+      "label": "Lightweight",
+      "price": 1250,
+      "price_c": 1499,
       "quantity": 1
     }
   ]

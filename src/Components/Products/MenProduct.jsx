@@ -8,8 +8,9 @@ import {
   Stack,
   Image,
   Button,
+  useToast
 } from "@chakra-ui/react";
-import { useToast } from "@chakra-ui/react";
+// import { useToast } from "@chakra-ui/react";
 import { addToCart } from "../../Redux/Products_Reducer/action";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
