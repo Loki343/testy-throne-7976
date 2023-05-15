@@ -99,6 +99,14 @@
 
 <br/>
 
+## How to login in our website
+1. At first click on signup and fill all the required fields and click on signup button to create your user-id.
+2. To signin into the website fill your email and password as per your signup data.
+
+## How to login at Admin Sight
+Email - unicornadmin@gmail.com
+Password - admin1234
+
 ## Our Learnings
 On this journey we faced many issues, but we keep motivated each other with patience. 
 
