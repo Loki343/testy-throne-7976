@@ -160,7 +160,7 @@ function Signup() {
             type="password"
             name="password"
           />
-          <FormLabel>Re-Enter Password</FormLabel>
+          <FormLabel>Re-Enter your Password</FormLabel>
           <Input
             placeholder="Re-Enter Your Password (*Required)"
             type="password"
