@@ -25,12 +25,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../Redux/Products_Reducer/action";
 
-export default function SingleProductPageWomen({ image,
-  title,
-  discount,
-  label,
-  price,
-  price_c,}) {
+export default function SingleProductPageWomen() {
   const [data, setData] = useState({});
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -71,7 +66,7 @@ export default function SingleProductPageWomen({ image,
   };
 
   const handleAddToCart = () => {
-    const prod = { image, title, id, discount, label, price, price_c ,quantity:1};
+    const prod = { image:data.image, title:data.title, id:data.id, price:data.price,quantity:1};
     if (localStorage.getItem("name")) {
       dispatch(addToCart(prod, addToCartSuccess, alreadyAdded));
       window.location.reload()

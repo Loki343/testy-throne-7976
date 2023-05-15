@@ -15,7 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AddressForm from "./AddressForm";
 import PaymentForm from "./PaymentForm";
 import Review from "./Review";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -49,10 +49,18 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const Navigate = useNavigate()
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+    if(activeStep === steps.length - 1){
+      setTimeout(() => {
+        Navigate('/')
+     }, 3000);
+     }
   };
+
+  
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
