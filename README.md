@@ -13,7 +13,7 @@
 
 - Suraj Yadav (My Linkedin profile :- https://www.linkedin.com/in/suraj-yadav-003626236/)
 
-- Suraj (My Linkedin profile :- linkedin.com/in/suraj-05b227196
+- Suraj (My Linkedin profile :- https://www.linkedin.com/in/suraj-05b227196/
 <br/>
 
 ## How to login in our website
